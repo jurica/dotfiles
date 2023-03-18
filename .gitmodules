@@ -4,3 +4,6 @@
 [submodule "alacritty-theme"]
 	path = alacritty-theme
 	url = git@github.com:alacritty/alacritty-theme.git
+[submodule "delta"]
+	path = delta
+	url = git@github.com:dandavison/delta.git

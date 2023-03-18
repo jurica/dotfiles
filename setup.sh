@@ -22,6 +22,20 @@ ln -s $(realpath alacritty-theme/themes) ~/.config/alacritty/themes
 echo ' ** setup nvim config'
 rm -f ~/.config/nvim
 ln -s $(realpath kickstart.nvim) ~/.config/nvim
+mkdir -p ~/bin
+rm -f ~/bin/nvim_listen.sh
+rm -f ~/bin/nvim_remote.sh
+ln -s $(realpath bin/nvim_listen.sh) ~/bin/nvim_listen.sh
+ln -s $(realpath bin/nvim_remote.sh) ~/bin/nvim_remote.sh
+
+echo ' ** setup lazygit config'
+rm -f ~/Library/Application\ Support/lazygit/config.yml
+ln -s $(realpath lazygit/config.yml) ~/Library/Application\ Support/lazygit/config.yml
+
+echo ' ** setup delta config'
+mkdir -p ~/.config/delta
+rm -f ~/.config/delta/themes.gitconfig
+ln -s $(realpath delta/themes.gitconfig) ~/.config/delta/themes.gitconfig
 
 echo '* finished setup of dotfiles'
 
