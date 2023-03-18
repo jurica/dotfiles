@@ -36,6 +36,12 @@ echo ' ** setup delta config'
 mkdir -p ~/.config/delta
 rm -f ~/.config/delta/themes.gitconfig
 ln -s $(realpath delta/themes.gitconfig) ~/.config/delta/themes.gitconfig
+cat << EOF
+Add:
+[include]
+	path = ~/.config/delta/themes.gitconfig
+to ~/.gitconfig
+EOF
 
 echo '* finished setup of dotfiles'
 
