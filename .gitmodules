@@ -3,7 +3,7 @@
 	url = git@github.com:jurica/kickstart.nvim.git
 [submodule "alacritty-theme"]
 	path = alacritty-theme
-	url = git@github.com:alacritty/alacritty-theme.git
+	url = git@github.com:jurica/alacritty-theme.git
 [submodule "delta"]
 	path = delta
 	url = git@github.com:dandavison/delta.git

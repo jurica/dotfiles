@@ -23,10 +23,10 @@ echo ' ** setup nvim config'
 rm -f ~/.config/nvim
 ln -s $(realpath kickstart.nvim) ~/.config/nvim
 mkdir -p ~/bin
-rm -f ~/bin/nvim_listen.sh
 rm -f ~/bin/nvim_remote.sh
-ln -s $(realpath bin/nvim_listen.sh) ~/bin/nvim_listen.sh
 ln -s $(realpath bin/nvim_remote.sh) ~/bin/nvim_remote.sh
+rm -f ~/bin/nvim
+ln -s $(realpath bin/nvim_remote.sh) ~/bin/nvim
 
 echo ' ** setup lazygit config'
 rm -f ~/Library/Application\ Support/lazygit/config.yml
