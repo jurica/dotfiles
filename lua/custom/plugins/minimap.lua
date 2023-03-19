@@ -1,6 +1,6 @@
-vim.keymap.set('n', '<leader>mm', function ()
+vim.keymap.set('n', '<leader>tm', function ()
   vim.api.nvim_command("MinimapToggle")
-end, { desc = 'Toggle Minimap' })
+end, { desc = '[T]oggle [M]inimap' })
 
 return {
   "wfxr/minimap.vim",

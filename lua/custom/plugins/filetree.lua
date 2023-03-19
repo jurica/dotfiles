@@ -1,9 +1,9 @@
 -- Unless you are still migrating, remove the deprecated commands from v1.x
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
-vim.keymap.set('n', '<leader>b', function ()
+vim.keymap.set('n', '<leader>tn', function ()
   vim.api.nvim_command("Neotree toggle")
-end, { desc = 'Toggle Neotree' })
+end, { desc = '[T]oggle [N]eotree' })
 
 return {
   "nvim-neo-tree/neo-tree.nvim",
