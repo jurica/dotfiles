@@ -129,6 +129,7 @@ require('lazy').setup({
         theme = 'nord',
         component_separators = '|',
         section_separators = '',
+        ignore_focus = {'neo-tree'},
       },
     },
   },
