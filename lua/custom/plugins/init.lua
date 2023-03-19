@@ -3,6 +3,12 @@
 --
 -- See the kickstart.nvim README for more information
 
+vim.keymap.set('n', '<leader>Gs', require('telescope.builtin').git_status, { desc = '[G]it [s]tatus' })
+vim.keymap.set('n', '<leader>GS', require('telescope.builtin').git_stash, { desc = '[G]it [S]tash' })
+vim.keymap.set('n', '<leader>Gc', require('telescope.builtin').git_commits, { desc = '[G]it [c]ommits' })
+vim.keymap.set('n', '<leader>GC', require('telescope.builtin').git_bcommits, { desc = '[G]it file [C]ommits' })
+vim.keymap.set('n', '<leader>Gb', require('telescope.builtin').git_branches, { desc = '[G]it [b]ranches' })
+
 vim.keymap.set('n', '<leader>tb', function ()
   -- print(vim.o.background)
   if vim.o.background == 'dark' then
