@@ -387,6 +387,21 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
+  local is_clangd = function()
+    for _, client in pairs(vim.lsp.get_active_clients {bufnr = bufnr}) do
+      if client.name == "clangd" then
+        return true
+      end
+
+      return false
+    end
+  end
+
+  if is_clangd() then
+    local sw = require('lspconfig.server_configurations.clangd').commands.ClangdSwitchSourceHeader[1]
+    nmap('<F4>', sw, 'F4 - switch source/header')
+  end
+
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
@@ -421,7 +436,8 @@ end
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-  -- clangd = {},
+  clangd = {
+  },
   -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},

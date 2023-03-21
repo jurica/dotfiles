@@ -11,7 +11,9 @@ return {
           {
             filetype = "neo-tree",
             text = function()
-              return vim.fn.getcwd()
+              local segments = vim.split(vim.fn.getcwd(), '/')
+              local dirName = segments[#segments]
+              return dirName
             end,
             text_align = "left",
           }
