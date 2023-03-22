@@ -243,6 +243,7 @@ plugins {
 //
 // theme "default"
  theme "nord"
+ // theme "nord-light"
 
 // The name of the default layout to load on startup
 // Default: "default"
@@ -331,6 +332,21 @@ themes {
         magenta "#B48EAD"
         cyan "#88C0D0"
         white "#E5E9F0"
+        orange "#D08770"
+    }
+
+    nord-light {
+        fg "#5E81AC"
+        // bg "#ECEFF4"
+        bg "#4C566A"
+        black   "#d8dee9"
+        red     "#bf616a"
+        green   "#a3be8c"
+        yellow  "#ebcb8b"
+        blue    "#81a1c1"
+        magenta "#B48EAD"
+        cyan    "#88C0D0"
+        white   "#E5E9F0"
         orange "#D08770"
     }
 }
