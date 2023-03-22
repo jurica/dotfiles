@@ -23,6 +23,8 @@ vim.keymap.set('n', '<leader>tb', function ()
   end
 end, { desc = '[T]oggle [b]ackground color (light/dark)' })
 
-vim.api.nvim_command("echo serverstart('/tmp/nvim.pipe')")
+pcall(function ()
+  vim.fn.serverstart('/tmp/nvim.pipe')
+end)
 
 return {}
