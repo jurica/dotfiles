@@ -242,8 +242,6 @@ plugins {
 // Default: default
 //
 // theme "default"
- theme "nord"
- // theme "nord-light"
 
 // The name of the default layout to load on startup
 // Default: "default"
@@ -319,6 +317,9 @@ plugins {
 // theme_dir "/path/to/my/theme_dir"
 // theme_dir "~/.config/zellij/themes"
 
+ theme "nord"
+ // theme "nord-light"
+
 themes {
     nord {
         fg "#D8DEE9"
@@ -336,18 +337,17 @@ themes {
     }
 
     nord-light {
-        fg "#5E81AC"
-        // bg "#ECEFF4"
-        bg "#4C566A"
+        fg      "#81A1C1"
+        bg      "#D8DEE9"
         black   "#d8dee9"
         red     "#bf616a"
-        green   "#a3be8c"
+        green   "#8FBCBB"
         yellow  "#ebcb8b"
         blue    "#81a1c1"
         magenta "#B48EAD"
         cyan    "#88C0D0"
-        white   "#E5E9F0"
-        orange "#D08770"
+        white   "#81A1C1"
+        orange  "#D08770"
     }
 }
 

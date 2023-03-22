@@ -1,5 +1,6 @@
 git:
   paging:
     colorArg: always
-    pager: delta --dark --paging=never --line-numbers --side-by-side --features calochortus-lyallii
-
+    # pager: delta --dark --paging=never --line-numbers --side-by-side --features calochortus-lyallii
+    # pager: delta --light --paging=never --line-numbers --side-by-side
+    pager: delta --dark --paging=never --line-numbers --side-by-side
