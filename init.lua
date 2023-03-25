@@ -119,6 +119,7 @@ require('lazy').setup({
       vim.cmd.colorscheme 'nord'
     end,
   },
+  { "catppuccin/nvim", name = "catppuccin" },
 
   { -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
