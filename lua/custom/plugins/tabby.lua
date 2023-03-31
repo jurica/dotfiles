@@ -25,8 +25,11 @@ return {
       local dirName = segments[#segments]
     return {
         {
+          {" "},
           dirName,
-          {' - '}
+          {"  "},
+          vim.fn.expand('%:t'),
+          {' '}
         },
         line.tabs().foreach(function(tab)
         local hl = tab.is_current() and theme.current_tab or theme.tab
