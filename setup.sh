@@ -57,5 +57,6 @@ to ~/.gitconfig
 Install Nerd Font: https://www.nerdfonts.com/font-downloads
  - brew tap homebrew/cask-fonts
  - brew install --cask font-jetbrains-mono-nerd-font
+ - brew install --cask font-fira-mono-nerd-font
 EOF
 
