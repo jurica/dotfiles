@@ -13,6 +13,11 @@ ln -s $(realpath zshrc-mbp) ~/.zshrc
 rm -f ~/.oh-my-zsh/themes/nord.zsh-theme
 ln -s $(realpath omzsh-theme-nord-extended/nord.zsh-theme) ~/.oh-my-zsh/themes/
 
+echo ' ** setup direnv'
+mkdir -p ~/.config/direnv
+rm -f ~/.config/direnv/direnv.toml
+ln -s $(realpath direnv/direnv.toml) ~/.config/direnv/
+
 echo ' ** setup zellij config'
 mkdir -p ~/.config/zellij
 rm -f ~/.config/zellij/config.kdl
