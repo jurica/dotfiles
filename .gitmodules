@@ -10,3 +10,6 @@
 [submodule "nord-kitty"]
 	path = nord-kitty
 	url = git@github.com:jurica/nord-kitty.git
+[submodule "omzsh-theme-nord-extended"]
+	path = omzsh-theme-nord-extended
+	url = https://github.com/fxbrit/nord-extended
