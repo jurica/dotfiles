@@ -113,7 +113,7 @@ require('lazy').setup({
   },
 
   {
-    'shaunsingh/nord.nvim',
+    'jurica/nord.nvim',
     priority = 900,
     config = function()
       vim.cmd.colorscheme 'nord'
