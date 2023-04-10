@@ -110,4 +110,4 @@ export EDITOR='nvim'
 
 export ZK_NOTEBOOK_DIR="/Users/jurica.bacurin/Dev/notes"
 export ZEIT_DB="/Users/jurica.bacurin/Dev/zeit/zeit.db"
-
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"

@@ -1,5 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="/home/jb/bin:/home/jb/go/bin:$PATH"
+. "$HOME/.cargo/env"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -107,8 +109,4 @@ export EDITOR='nvim'
 
 export ZK_NOTEBOOK_DIR="/Users/jurica.bacurin/Dev/notes"
 export ZEIT_DB="/Users/jurica.bacurin/Dev/zeit/zeit.db"
-
-#eval $(/opt/homebrew/bin/brew shellenv)
-export PATH="/home/jb/bin:/home/jb/go/bin:$PATH"
-
-. "$HOME/.cargo/env"
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
