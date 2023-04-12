@@ -370,7 +370,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagn
 vim.diagnostic.config({
   float = {
     source = 'always',
-    border = border
+    border = "single"
   },
 })
 
