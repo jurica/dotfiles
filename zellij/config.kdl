@@ -299,7 +299,7 @@ plugins {
 //
 // scrollback_editor "/usr/bin/vim"
  // scrollback_editor "nvim --server /tmp/nvim.pipe --remote"
- scrollback_editor "/Users/jurica.bacurin/bin/nvim_remote.sh"
+ scrollback_editor "nvim_remote.sh"
 
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)
