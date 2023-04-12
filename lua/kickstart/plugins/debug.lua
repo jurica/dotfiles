@@ -42,6 +42,8 @@ return {
       },
     }
 
+    vim.fn.sign_define('DapStopped',{ text ='▶️', texthl ='', linehl ='', numhl =''})
+
     -- Basic debugging keymaps, feel free to change to your liking!
     vim.keymap.set('n', '<F5>', dap.continue)
     vim.keymap.set('n', '<F1>', dap.step_into)
@@ -63,10 +65,10 @@ return {
         icons = {
           pause = '⏸',
           play = '▶',
-          step_into = '⏎',
-          step_over = '⏭',
-          step_out = '⏮',
-          step_back = 'b',
+          step_into = '',
+          step_over = '',
+          step_out = '',
+          step_back = '',
           run_last = '▶▶',
           terminate = '⏹',
         },

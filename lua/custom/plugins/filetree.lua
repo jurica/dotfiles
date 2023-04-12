@@ -3,7 +3,7 @@ vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 vim.keymap.set('n', '<leader>tt', function ()
   vim.api.nvim_command("Neotree filesystem reveal float")
-end, { desc = '[T]oggle [N]eotree' })
+end, { desc = '[TT]oggle Neotree' })
 
 return {
   "nvim-neo-tree/neo-tree.nvim",

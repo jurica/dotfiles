@@ -25,10 +25,10 @@ return {
       local dirName = segments[#segments]
     return {
         {
-          {" "},
+          {"  "},
           dirName,
-          {"  "},
-          vim.fn.expand('%:t'),
+          -- {"  "},
+          -- vim.fn.expand('%:t'),
           {' '}
         },
         line.tabs().foreach(function(tab)

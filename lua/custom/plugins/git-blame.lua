@@ -8,6 +8,18 @@ return {
     vim.g.gitblame_ignored_filetypes = {'log', 'dump'}
     local git_blame = require('gitblame')
     require('lualine').setup({
+      icons_enabled = true,
+      theme = 'nord',
+      component_separators = '|',
+      section_separators = '',
+      ignore_focus = {'neo-tree'},
+      winbar = {
+        lualine_a = {'mode'},
+        lualine_b = {'filename'},
+        lualine_c = {'diagnostics'},
+        lualine_y = {'progress'},
+        lualine_z = {'location'}
+      },
       sections = {
         lualine_b = {
           {'branch'},
@@ -16,13 +28,13 @@ return {
         },
         lualine_c = {'diagnostics'}
       },
+      inactive_winbar = {
+        lualine_b = {'filename'},
+      },
       inactive_sections = {
-        lualine_a = {'mode'},
-        lualine_b = {},
-        lualine_c = {'filename'},
-        lualine_x = {'encoding', 'fileformat', 'filetype'},
-        lualine_y = {'progress'},
-        lualine_z = {'location'}
+        lualine_b = {'filename'},
+        lualine_c = {},
+        lualine_x = {},
       }
     })
   end
