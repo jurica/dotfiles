@@ -6,6 +6,9 @@
 vim.g.nord_borders = true
 vim.g.nord_italic = false
 
+vim.keymap.set('v', '>', '>gv')
+vim.keymap.set('v', '<', '<gv')
+
 vim.keymap.set('n', '<leader>Gs', require('telescope.builtin').git_status, { desc = '[G]it [s]tatus' })
 vim.keymap.set('n', '<leader>GS', require('telescope.builtin').git_stash, { desc = '[G]it [S]tash' })
 vim.keymap.set('n', '<leader>Gc', require('telescope.builtin').git_commits, { desc = '[G]it [c]ommits' })
