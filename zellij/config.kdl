@@ -25,9 +25,9 @@ keybinds clear-defaults=true {
         bind "h" "Left" { MoveFocus "Left"; }
         bind "l" "Right" { MoveFocus "Right"; }
         bind "j" "Down" { MoveFocus "Down"; }
-        //bind "k" "Up" { MoveFocus "Up"; }
+        bind "k" "Up" { MoveFocus "Up"; }
         bind "Up" { MoveFocus "Up"; }
-        bind "k" { Clear; ScrollToTop; SwitchToMode "Normal"; }
+        bind "0" { Clear; ScrollToTop; SwitchToMode "Normal"; }
         bind "p" { SwitchFocus; }
         bind "n" { NewPane; SwitchToMode "Normal"; }
         bind "d" { NewPane "Down"; SwitchToMode "Normal"; }
