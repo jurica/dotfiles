@@ -268,12 +268,12 @@ require('telescope').setup {
     sorting_strategy = "ascending",
     layout_config = {
       vertical = {
-        width = 0.8,
+        width = 0.9,
         mirror = true,
         prompt_position = "top",
       },
       horizontal = {
-        width = 0.8,
+        width = 0.9,
         prompt_position = "top",
       },
     },
