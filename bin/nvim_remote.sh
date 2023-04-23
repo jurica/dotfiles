@@ -5,4 +5,4 @@ if [[ -z $1 ]]; then
     exit 1
 fi
 
-nvim --server /tmp/nvim.pipe --remote "$(realpath "$1")"
+/opt/homebrew/bin/nvim --server /tmp/nvim.pipe --remote "$(realpath "$1")"
