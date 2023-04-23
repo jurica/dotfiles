@@ -3,6 +3,9 @@
 --
 -- See the kickstart.nvim README for more information
 
+vim.o.splitbelow = 1
+vim.o.splitright = 1
+
 vim.g.nord_borders = true
 vim.g.nord_italic = false
 

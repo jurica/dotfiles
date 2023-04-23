@@ -260,8 +260,21 @@ require('telescope').setup {
   defaults = {
     mappings = {
       i = {
-        ['<C-u>'] = false,
-        ['<C-d>'] = false,
+        -- ['<C-u>'] = false,
+        -- ['<C-d>'] = false,
+      },
+    },
+    layout_strategy = "vertical",
+    sorting_strategy = "ascending",
+    layout_config = {
+      vertical = {
+        width = 0.8,
+        mirror = true,
+        prompt_position = "top",
+      },
+      horizontal = {
+        width = 0.8,
+        prompt_position = "top",
       },
     },
   },
