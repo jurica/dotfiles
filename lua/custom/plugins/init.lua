@@ -18,6 +18,8 @@ vim.keymap.set('n', '<leader>Gc', require('telescope.builtin').git_commits, { de
 vim.keymap.set('n', '<leader>GC', require('telescope.builtin').git_bcommits, { desc = '[G]it file [C]ommits' })
 vim.keymap.set('n', '<leader>Gb', require('telescope.builtin').git_branches, { desc = '[G]it [b]ranches' })
 
+vim.keymap.set('n', '<leader>df', require('telescope.builtin').filetypes, { desc = '[D]ocument [f]iletype'})
+
 vim.keymap.set('n', '<leader>tb', function ()
   -- print(vim.o.background)
   if vim.o.background == 'dark' then
