@@ -5,8 +5,8 @@ vim.keymap.set('n', '<leader>td', ":tabclose<CR>", { desc = '[T]ab [d]elte' })
 vim.keymap.set('n', '<leader>to', ":tabonly<CR>", { desc = '[T]ab [o]only' })
 vim.keymap.set('n', '<leader>]', ":tabnext<CR>", { desc = 'Tab next' })
 vim.keymap.set('n', '<leader>[', ":tabprevious<CR>", { desc = 'Tab previous' })
-vim.keymap.set('n', '<leader>}', ":tablast<CR>", { desc = 'Tab next' })
-vim.keymap.set('n', '<leader>{', ":tabfirst<CR>", { desc = 'Tab previous' })
+vim.keymap.set('n', '<leader>}', ":tablast<CR>", { desc = 'Tab last' })
+vim.keymap.set('n', '<leader>{', ":tabfirst<CR>", { desc = 'Tab first' })
 
 return {
   'nanozuki/tabby.nvim',

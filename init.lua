@@ -295,6 +295,7 @@ vim.keymap.set('n', '<leader><space>', function ()
         vim.api.nvim_buf_delete(selection.bufnr, { force = true })
       end
       map('i', '<C-d>', delete_buf)
+      map('n', 'd', delete_buf)
       return true
     end
   }
@@ -305,9 +306,15 @@ vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { des
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
+vim.keymap.set('n', '<leader>sG', function ()
+  require('telescope.builtin').live_grep {
+    search_dirs = {"%:p"},
+  }
+end, { desc = '[S]earch by Grep in [F]ile' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sj', require('telescope.builtin').jumplist, { desc = '[S]earch [J]umplist' })
 vim.keymap.set('n', '<leader>sm', require('telescope.builtin').marks, { desc = '[S]earch [M]arks' })
+vim.keymap.set('n', '<leader>sn', require('telescope').extensions.notify.notify, { desc = '[S]earch [N]otifications' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
