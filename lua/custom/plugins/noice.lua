@@ -17,6 +17,11 @@ return {
     })
   end,
   dependencies = {
-    'rcarriga/nvim-notify'
+    'rcarriga/nvim-notify',
+    config = function ()
+      require('notify').setup({
+        stages = "static"
+      })
+    end
   }
 }
