@@ -42,11 +42,15 @@ ln -s "$(realpath nord-kitty/nord-light.conf)" ~/.config/kitty/nord-light.conf
 echo ' ** setup nvim config'
 rm -f ~/.config/nvim
 ln -s "$(realpath kickstart.nvim)" ~/.config/nvim
+
+echo ' ** setup scripts'
 mkdir -p ~/bin
 rm -f ~/bin/nvim_remote.sh
 ln -s "$(realpath bin/nvim_remote.sh)" ~/bin/nvim_remote.sh
 rm -f ~/bin/keymap.sh
 ln -s "$(realpath bin/keymap.sh)" ~/bin/keymap.sh
+rm -f ~/bin/switch_theme.sh
+ln -s "$(realpath bin/switch_theme.sh)" ~/bin/switch_theme.sh
 
 echo ' ** setup lazygit config'
 rm -f ~/Library/Application\ Support/lazygit/config.yml
