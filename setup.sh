@@ -64,16 +64,23 @@ ln -s "$(realpath delta/themes.gitconfig)" ~/.config/delta/themes.gitconfig
 echo '* finished setup of dotfiles'
 
 cat << EOF
-To finish setup add:
+To finish setup:
+
+## 1. Add:
 ------------------------------------------------
 [include]
 	path = ~/.config/delta/themes.gitconfig
 ------------------------------------------------
 to ~/.gitconfig
 
-Install Nerd Font: https://www.nerdfonts.com/font-downloads
+## 2. Install Nerd Font: https://www.nerdfonts.com/font-downloads
  - brew tap homebrew/cask-fonts
  - brew install --cask font-jetbrains-mono-nerd-font
  - brew install --cask font-fira-mono-nerd-font
+
+## 3. Setup karabiner:
+ - check if there is already an existing config in ~/.config/krabiner
+   - if so, integrate it to dotfiles
+ - "ln -s ~/Dev/dotfiles/karabiner ~/.config/karabiner"
 EOF
 
