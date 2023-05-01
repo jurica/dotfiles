@@ -318,7 +318,6 @@ simplified_ui true
 // theme_dir "~/.config/zellij/themes"
 
  theme "nord"
- // theme "nord-light"
 
 themes {
     nord {
