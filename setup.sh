@@ -30,15 +30,6 @@ rm -f ~/.config/alacritty/themes
 ln -s "$(realpath alacritty/alacritty.yml)" ~/.config/alacritty/alacritty.yml
 ln -s "$(realpath alacritty-theme/themes)" ~/.config/alacritty/themes
 
-echo ' ** setup kitty config'
-mkdir -p ~/.config/kitty
-rm -f ~/.config/kitty/kitty.conf
-rm -f ~/.config/kitty/nord.conf
-rm -f ~/.config/kitty/nord-light.conf
-ln -s "$(realpath kitty/kitty.conf)" ~/.config/kitty/kitty.conf
-ln -s "$(realpath nord-kitty/nord.conf)" ~/.config/kitty/nord.conf
-ln -s "$(realpath nord-kitty/nord-light.conf)" ~/.config/kitty/nord-light.conf
-
 echo ' ** setup nvim config'
 rm -f ~/.config/nvim
 ln -s "$(realpath kickstart.nvim)" ~/.config/nvim
