@@ -3,6 +3,8 @@
 --
 -- See the kickstart.nvim README for more information
 
+vim.o.whichwrap = "h,l,<,>"
+
 vim.o.splitbelow = 1
 vim.o.splitright = 1
 
