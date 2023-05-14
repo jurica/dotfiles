@@ -141,7 +141,7 @@ font:
     #   - (Windows) Consolas
     #family: JetBrains Mono
     # family: JetBrainsMono Nerd Font
-    family: FuraMono Nerd Font
+    family: FiraMono Nerd Font
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
