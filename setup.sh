@@ -73,5 +73,9 @@ to ~/.gitconfig
  - check if there is already an existing config in ~/.config/krabiner
    - if so, integrate it to dotfiles
  - "ln -s ~/Dev/dotfiles/karabiner ~/.config/karabiner"
+
+## 4. Install zsh-fzf-history
+ - check https://github.com/joshskidmore/zsh-fzf-history-search for instructions
+  - TL;DR: git clone https://github.com/joshskidmore/zsh-fzf-history-search ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-fzf-history-search
 EOF
 
