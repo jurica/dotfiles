@@ -42,6 +42,10 @@ rm -f ~/bin/keymap.sh
 ln -s "$(realpath bin/keymap.sh)" ~/bin/keymap.sh
 rm -f ~/bin/switch_theme.sh
 ln -s "$(realpath bin/switch_theme.sh)" ~/bin/switch_theme.sh
+rm -f ~/bin/zt.sh
+ln -s "$(realpath bin/zt.sh)" ~/bin/zt.sh
+rm -f ~/bin/za.sh
+ln -s "$(realpath bin/za.sh)" ~/bin/za.sh
 
 echo ' ** setup lazygit config'
 rm -f ~/Library/Application\ Support/lazygit/config.yml
