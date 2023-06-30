@@ -15,7 +15,7 @@ return {
       ignore_focus = {'neo-tree'},
       winbar = {
         lualine_a = {'mode'},
-        lualine_b = {'filename'},
+        lualine_b = {{'filename', path=1}},
         lualine_c = {'diagnostics'},
         lualine_y = {'progress'},
         lualine_z = {'location'}
@@ -29,10 +29,12 @@ return {
         lualine_c = {'diagnostics'}
       },
       inactive_winbar = {
-        lualine_b = {'filename'},
+        -- lualine_a = {'mode'},
+        lualine_b = {{'filename', path=1}},
       },
       inactive_sections = {
-        lualine_b = {'filename'},
+        -- lualine_a = {'mode'},
+        lualine_b = {{'filename', path=1}},
         lualine_c = {},
         lualine_x = {},
       }
