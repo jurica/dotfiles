@@ -127,17 +127,17 @@
         "KC_F5"
       ],
       [
-        "RGB_TOG",
-        "RGB_HUI",
-        "RGB_SAI",
-        "RGB_VAI",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
         "KC_VOLU"
       ],
       [
         "KC_NO",
-        "RGB_HUD",
-        "RGB_SAD",
-        "RGB_VAD",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
         "KC_VOLD"
       ],
       [
@@ -178,7 +178,7 @@
     ],
     [
       [
-        "RGB_TOG",
+        "KC_NO",
         "KC_NO",
         "KC_NO",
         "KC_NO",
