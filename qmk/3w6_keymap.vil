@@ -918,8 +918,8 @@
       "KC_CAPSLOCK"
     ],
     [
-      "LGUI_T(KC_SPACE)",
-      "MO(1)",
+      "LCTL_T(KC_TAB)",
+      "LALT_T(KC_SPACE)",
       "KC_NO",
       "KC_NO",
       "OSM(MOD_MEH)"
@@ -932,11 +932,11 @@
       "KC_ENTER"
     ],
     [
+      "KC_O",
+      "KC_P",
       "KC_NO",
       "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO"
+      "KC_BSPACE"
     ],
     [
       "KC_NO",
