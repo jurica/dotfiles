@@ -56,8 +56,8 @@
         -1,
         -1,
         "LT2(KC_BSPACE)",
-        "MO(1)",
-        "LALT_T(KC_SPACE)"
+        "LT1(KC_SPACE)",
+        "LALT_T(KC_ENTER)"
       ]
     ],
     [
@@ -127,17 +127,17 @@
         "KC_F5"
       ],
       [
-        "M0",
-        "M2",
-        "M4",
-        "KC_NO",
+        "RGB_TOG",
+        "RGB_HUI",
+        "RGB_SAI",
+        "RGB_VAI",
         "KC_VOLU"
       ],
       [
-        "M1",
-        "M3",
-        "M5",
         "KC_NO",
+        "RGB_HUD",
+        "RGB_SAD",
+        "RGB_VAD",
         "KC_VOLD"
       ],
       [
@@ -156,7 +156,7 @@
       ],
       [
         "KC_F12",
-        "KC_F10",
+        "KC_F11",
         "KC_F10",
         "KC_NO",
         "KC_NO"
@@ -178,38 +178,38 @@
     ],
     [
       [
-        "KC_NO",
-        "KC_NO",
-        "KC_NO",
-        "KC_NO",
-        "KC_NO"
-      ],
-      [
-        "KC_NO",
+        "RGB_TOG",
         "KC_NO",
         "KC_NO",
         "KC_NO",
         "KC_NO"
       ],
       [
+        "M0",
+        "RGB_HUI",
+        "RGB_SAI",
+        "RGB_VAI",
+        "KC_NO"
+      ],
+      [
         "KC_NO",
-        "KC_NO",
-        "KC_NO",
-        "KC_NO",
+        "RGB_HUD",
+        "RGB_SAD",
+        "RGB_VAD",
         "KC_NO"
       ],
       [
         -1,
         -1,
-        "KC_NO",
+        "MO(4)",
         "KC_NO",
         "KC_NO"
       ],
       [
         "KC_NO",
+        "M4",
         "KC_NO",
-        "KC_NO",
-        "KC_NO",
+        "M4",
         "KC_NO"
       ],
       [
@@ -243,7 +243,7 @@
         "KC_NO"
       ],
       [
-        "KC_NO",
+        "M1",
         "KC_NO",
         "KC_NO",
         "KC_NO",
@@ -265,9 +265,9 @@
       ],
       [
         "KC_NO",
+        "M3",
         "KC_NO",
-        "KC_NO",
-        "KC_NO",
+        "M5",
         "KC_NO"
       ],
       [
@@ -912,31 +912,31 @@
   "combo": [
     [
       "LSFT_T(KC_ESCAPE)",
-      "LT7(KC_BSPACE)",
+      "LT2(KC_BSPACE)",
       "KC_NO",
       "KC_NO",
       "KC_CAPSLOCK"
     ],
     [
       "LCTL_T(KC_TAB)",
-      "LALT_T(KC_SPACE)",
+      "LALT_T(KC_ENTER)",
       "KC_NO",
       "KC_NO",
       "OSM(MOD_MEH)"
     ],
     [
-      "MO(1)",
-      "KC_N",
+      "LT1(KC_SPACE)",
+      "LT2(KC_BSPACE)",
       "KC_NO",
       "KC_NO",
-      "KC_ENTER"
+      "MO(3)"
     ],
     [
-      "KC_O",
-      "KC_P",
       "KC_NO",
       "KC_NO",
-      "KC_BSPACE"
+      "KC_NO",
+      "KC_NO",
+      "KC_NO"
     ],
     [
       "KC_NO",
@@ -1433,7 +1433,7 @@
     "5": 5,
     "6": 5000,
     "7": 200,
-    "8": 0,
+    "8": 4,
     "9": 10,
     "10": 20,
     "11": 8,
