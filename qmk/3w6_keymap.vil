@@ -207,7 +207,7 @@
       ],
       [
         "KC_NO",
-        "M4",
+        "M2",
         "KC_NO",
         "M4",
         "KC_NO"
@@ -685,25 +685,25 @@
   "via_protocol": 9,
   "tap_dance": [
     [
-      "KC_A",
       "KC_NO",
       "KC_NO",
-      "OSM(MOD_MEH)",
+      "KC_NO",
+      "KC_NO",
       200
     ],
     [
-      "KC_SCOLON",
       "KC_NO",
       "KC_NO",
-      "OSM(MOD_MEH)",
+      "KC_NO",
+      "KC_NO",
       200
     ],
     [
-      "KC_ESCAPE",
-      "KC_LSHIFT",
-      "OSM(MOD_RALT)",
-      "LSA_T(KC_NO)",
-      180
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      200
     ],
     [
       "KC_NO",
@@ -915,7 +915,7 @@
       "LT2(KC_BSPACE)",
       "KC_NO",
       "KC_NO",
-      "KC_CAPSLOCK"
+      "0x5dac"
     ],
     [
       "LCTL_T(KC_TAB)",
