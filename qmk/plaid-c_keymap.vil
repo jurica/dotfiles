@@ -48,14 +48,14 @@
       [
         "KC_NO",
         "KC_NO",
+        "KC_NO",
         "LSFT_T(KC_ESCAPE)",
         "LGUI_T(KC_SPACE)",
         "LCTL_T(KC_TAB)",
-        "KC_NO",
-        "KC_NO",
         "LALT_T(KC_ENTER)",
         "LT1(KC_SPACE)",
         "LT2(KC_BSPACE)",
+        "KC_NO",
         "KC_NO",
         "KC_NO"
       ]
@@ -106,14 +106,14 @@
       [
         "KC_LALT",
         "KC_NO",
+        "KC_NO",
         "KC_LSHIFT",
         "KC_LGUI",
         "KC_LCTRL",
-        "KC_NO",
-        "KC_NO",
         "KC_LALT",
         "KC_NO",
         "KC_DELETE",
+        "KC_NO",
         "KC_NO",
         "KC_NO"
       ]
@@ -164,8 +164,8 @@
       [
         "KC_NO",
         "KC_NO",
-        "KC_ASTG",
         "KC_NO",
+        "KC_ASTG",
         "KC_NO",
         "KC_NO",
         "KC_NO",
@@ -222,8 +222,8 @@
       [
         "KC_NO",
         "KC_NO",
-        "MO(4)",
         "KC_NO",
+        "MO(4)",
         "KC_NO",
         "KC_NO",
         "KC_NO",
