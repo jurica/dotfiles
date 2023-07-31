@@ -504,7 +504,7 @@
     [],
     []
   ],
-  "vial_protocol": 5,
+  "vial_protocol": 6,
   "via_protocol": 9,
   "tap_dance": [
     [
@@ -570,7 +570,7 @@
       "LT2(KC_BSPACE)",
       "KC_NO",
       "KC_NO",
-      "0x5dac"
+      "0x7c73"
     ],
     [
       "LCTL_T(KC_TAB)",
