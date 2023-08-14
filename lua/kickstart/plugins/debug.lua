@@ -25,14 +25,16 @@ return {
     local dap = require 'dap'
     local dapui = require 'dapui'
 
-    dap.adapters.cpp = {
+    dap.adapters.lldb = {
+      name = 'lldb',
       type = 'server',
       port = "${port}",
       executable = {
         command = '/Users/jurica.bacurin/.local/share/nvim/mason/bin/codelldb',
         args = {"--port", "${port}"},
-      }
+      },
     }
+    vim.api.nvim_create_user_command('DapLoadLldbForCpp', function() require('dap.ext.vscode').load_launchjs(vim.fn.getcwd() .. '/.vscode/launch.json', {lldb = {'cpp',}}) end, { nargs = 0 })
 
     -- require('mason-nvim-dap').setup {
     --   -- Makes a best effort to setup the various debuggers with
@@ -88,6 +90,6 @@ return {
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
     -- Install golang specific config
-    require('dap-go').setup()
+    -- require('dap-go').setup()
   end,
 }
