@@ -35,6 +35,11 @@ return {
       },
     }
     vim.api.nvim_create_user_command('DapLoadLldbForCpp', function() require('dap.ext.vscode').load_launchjs(vim.fn.getcwd() .. '/.vscode/launch.json', {lldb = {'cpp',}}) end, { nargs = 0 })
+    dap.adapters.python = {
+      type = 'executable',
+      command = '/Users/jurica.bacurin/.local/share/nvim/mason/packages/debugpy/venv/bin/python',
+      args = { '-m', 'debugpy.adapter' },
+    }
 
     -- require('mason-nvim-dap').setup {
     --   -- Makes a best effort to setup the various debuggers with
