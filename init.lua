@@ -66,6 +66,8 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
+  "MunifTanjim/nui.nvim",
+  
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
@@ -137,14 +139,15 @@ require('lazy').setup({
 
   { -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
+    main = "ibl",
+    opts = {}
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-      show_current_context = true,
-      show_current_context_start = true,
-    },
+    -- opts = {
+    --   char = '┊',
+    --   show_trailing_blankline_indent = false,
+    --   show_current_context = true,
+
   },
 
   -- "gc" to comment visual regions/lines
