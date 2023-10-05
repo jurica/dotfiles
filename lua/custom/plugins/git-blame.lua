@@ -8,42 +8,12 @@ return {
     vim.g.gitblame_ignored_filetypes = {'log', 'dump'}
     local git_blame = require('gitblame')
     require('lualine').setup({
-      options = {
-        icons_enabled = true,
-        theme = 'nord',
-        component_separators = '|',
-        section_separators = '',
-        ignore_focus = {'dap-repl'},
-        disabled_filetypes = {
-          "dapui_watches", "dapui_breakpoints",
-          "dapui_scopes", "dapui_console",
-          "dapui_stacks", "dap-repl"
-        },
-      },
-      winbar = {
-        lualine_a = {'mode'},
-        lualine_b = {{'filename', path=1}},
-        lualine_c = {'diagnostics'},
-        lualine_y = {'progress'},
-        lualine_z = {'location'}
-      },
       sections = {
         lualine_b = {
           {'branch'},
           {'diff'},
           { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available }
-        },
-        lualine_c = {'diagnostics'}
-      },
-      inactive_winbar = {
-        -- lualine_a = {'mode'},
-        lualine_b = {{'filename', path=1}},
-      },
-      inactive_sections = {
-        -- lualine_a = {'mode'},
-        lualine_b = {{'filename', path=1}},
-        lualine_c = {},
-        lualine_x = {},
+        }
       }
     })
   end

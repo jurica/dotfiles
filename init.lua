@@ -122,19 +122,53 @@ require('lazy').setup({
     end,
   },
   { "catppuccin/nvim", name = "catppuccin" },
+  {
+    "Shatur/neovim-ayu",
+    priority = 800,
+    config = function()
+      require("ayu").setup({
+        mirage = true,
+      })
+      -- require("ayu").colorscheme()
+    end
+  },
 
-  { -- Set lualine as statusline
+  {
     'nvim-lualine/lualine.nvim',
-    -- See `:help lualine.txt`
-    opts = {
-      options = {
-        icons_enabled = true,
-        theme = 'nord',
-        component_separators = '|',
-        section_separators = '',
-        ignore_focus = {'neo-tree'},
-      },
-    },
+    config = function ()
+      require('lualine').setup({
+        options = {
+          icons_enabled = true,
+          theme = 'nord',
+          component_separators = '|',
+          section_separators = '',
+          ignore_focus = {'dap-repl'},
+          disabled_filetypes = {
+            "dapui_watches", "dapui_breakpoints",
+            "dapui_scopes", "dapui_console",
+            "dapui_stacks", "dap-repl"
+          },
+        },
+        winbar = {
+          lualine_a = {'mode'},
+          lualine_b = {{'filename', path=1}},
+          lualine_c = {'diagnostics'},
+          lualine_y = {'progress'},
+          lualine_z = {'location'}
+        },
+        sections = {
+          lualine_c = {'diagnostics'}
+        },
+        inactive_winbar = {
+          lualine_b = {{'filename', path=1}},
+        },
+        inactive_sections = {
+          lualine_b = {{'filename', path=1}},
+          lualine_c = {},
+          lualine_x = {},
+        }
+      })
+    end
   },
 
   { -- Add indentation guides even on blank lines
