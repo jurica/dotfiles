@@ -8,7 +8,7 @@ keybinds clear-defaults=true {
         bind "Ctrl l" { SwitchToMode "Normal"; }
     }
     resize {
-        bind "Ctrl b" { SwitchToMode "Normal"; }
+        bind "Ctrl h" { SwitchToMode "Normal"; }
         bind "h" "Left" { Resize "Increase Left"; }
         bind "j" "Down" { Resize "Increase Down"; }
         bind "k" "Up" { Resize "Increase Up"; }
@@ -42,7 +42,7 @@ keybinds clear-defaults=true {
         bind "]" { NextSwapLayout; }
     }
     move {
-        bind "Ctrl h" { SwitchToMode "Normal"; }
+        bind "Ctrl b" { SwitchToMode "Normal"; }
         bind "n" "Tab" { MovePane; }
         bind "p" { MovePaneBackwards; }
         bind "h" "Left" { MovePane "Left"; }
@@ -168,7 +168,7 @@ keybinds clear-defaults=true {
         bind "Ctrl p" { SwitchToMode "Pane"; }
     }
     shared_except "resize" "locked" {
-        bind "Ctrl b" { SwitchToMode "Resize"; }
+        bind "Ctrl h" { SwitchToMode "Resize"; }
     }
     shared_except "scroll" "locked" {
         bind "Ctrl s" { SwitchToMode "Scroll"; }
@@ -180,7 +180,7 @@ keybinds clear-defaults=true {
         bind "Ctrl t" { SwitchToMode "Tab"; }
     }
     shared_except "move" "locked" {
-        bind "Ctrl h" { SwitchToMode "Move"; }
+        bind "Ctrl b" { SwitchToMode "Move"; }
     }
     // shared_except "tmux" "locked" {
         // bind "Ctrl b" { SwitchToMode "Tmux"; }
