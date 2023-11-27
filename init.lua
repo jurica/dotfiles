@@ -139,7 +139,7 @@ require('lazy').setup({
       require('lualine').setup({
         options = {
           icons_enabled = true,
-          theme = 'nord',
+          theme = 'auto',
           component_separators = '|',
           section_separators = '',
           ignore_focus = {'dap-repl'},
@@ -353,7 +353,7 @@ end, { desc = '[S]earch by Grep in [F]ile' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sj', require('telescope.builtin').jumplist, { desc = '[S]earch [J]umplist' })
 vim.keymap.set('n', '<leader>sm', require('telescope.builtin').marks, { desc = '[S]earch [M]arks' })
-vim.keymap.set('n', '<leader>sn', require('telescope').extensions.notify.notify, { desc = '[S]earch [N]otifications' })
+-- vim.keymap.set('n', '<leader>sn', require('telescope').extensions.notify.notify, { desc = '[S]earch [N]otifications' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
