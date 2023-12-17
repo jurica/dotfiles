@@ -25,15 +25,29 @@ return {
     local dap = require 'dap'
     local dapui = require 'dapui'
 
-    dap.adapters.lldb = {
-      name = 'lldb',
-      type = 'server',
-      port = "${port}",
-      executable = {
-        command = '/Users/jurica.bacurin/.local/share/nvim/mason/bin/codelldb',
-        args = {"--port", "${port}"},
-      },
-    }
+    -- dap.adapters.lldb = {
+    --   name = 'lldb',
+    --   type = 'server',
+    --   port = "${port}",
+    --   executable = {
+    --     -- command = '/Users/jurica.bacurin/.local/share/nvim/mason/bin/codelldb',
+    --     -- command = vim.fn.exepath('codelldb'),
+    --     args = {"--port", "${port}"},
+    --   },
+    -- }
+    -- dap.configurations.cpp = {
+    --   {
+    --     name = 'Launch',
+    --     type = 'lldb',
+    --     request = 'launch',
+    --     program = function()
+    --       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    --     end,
+    --     cwd = '${workspaceFolder}',
+    --     stopOnEntry = false,
+    --     args = {},
+    --   },
+    -- }
     vim.api.nvim_create_user_command('DapLoadLldbForCpp', function() require('dap.ext.vscode').load_launchjs(vim.fn.getcwd() .. '/.vscode/launch.json', {lldb = {'cpp',}}) end, { nargs = 0 })
     dap.adapters.python = {
       type = 'executable',

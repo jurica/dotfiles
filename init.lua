@@ -589,7 +589,63 @@ cmp.setup {
   },
 }
 
-vim.cmd('Oil')
+-- vim.cmd('Oil')
 
 vim.o.cursorline = true
+
+local dap = require 'dap'
+dap.adapters.lldb = {
+  name = 'lldb',
+  type = 'server',
+  port = "${port}",
+  executable = {
+    command = vim.fn.exepath('codelldb'),
+    args = {"--port", "${port}"},
+  },
+}
+dap.configurations.cpp = {
+  {
+    name = 'Launch',
+    type = 'lldb',
+    request = 'launch',
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    cwd = '${workspaceFolder}',
+    stopOnEntry = false,
+    args = {},
+  },
+}
+
+vim.api.nvim_create_user_command('SetDebuggee',
+  function()
+    local dap = require 'dap'
+    dap.configurations.cpp[1].program =  vim.fn.input('Path to debugee: ', vim.fn.getcwd() .. '/', 'file')
+  end,
+  { nargs = 0 }
+)
+vim.api.nvim_create_user_command('ResetDebuggee',
+  function()
+    local dap = require 'dap'
+    dap.configurations.cpp = {
+      {
+        name = 'Launch',
+        type = 'lldb',
+        request = 'launch',
+        program = function()
+          return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+        end,
+        cwd = '${workspaceFolder}',
+        stopOnEntry = false,
+        args = {},
+      },
+    }
+  end,
+  { nargs = 0 }
+)
+vim.api.nvim_create_user_command('ShowDebuggee', function()
+    vim.print("Current debuggee: ", dap.configurations.cpp[1].program)
+  end,
+  { nargs = 0}
+)
 
