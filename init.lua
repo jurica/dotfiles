@@ -206,6 +206,14 @@ require('lazy').setup({
     end,
   },
 
+  {
+    'LukasPietzschmann/telescope-tabs',
+    dependencies = { 'nvim-telescope/telescope.nvim' },
+    config = function()
+      require('telescope-tabs').setup()
+    end
+  },
+
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
@@ -303,7 +311,7 @@ require('telescope').setup {
         -- ['<C-d>'] = false,
       },
     },
-    layout_strategy = "vertical",
+    -- layout_strategy = "vertical",
     sorting_strategy = "ascending",
     layout_config = {
       vertical = {
@@ -314,6 +322,7 @@ require('telescope').setup {
       horizontal = {
         width = 0.9,
         prompt_position = "top",
+        preview_width = 0.6
       },
     },
   },
@@ -354,6 +363,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<leader>sj', require('telescope.builtin').jumplist, { desc = '[S]earch [J]umplist' })
 vim.keymap.set('n', '<leader>sm', require('telescope.builtin').marks, { desc = '[S]earch [M]arks' })
 -- vim.keymap.set('n', '<leader>sn', require('telescope').extensions.notify.notify, { desc = '[S]earch [N]otifications' })
+vim.keymap.set('n', '<leader>st', require('telescope-tabs').list_tabs, { desc = '[S]earch [T]abs' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
@@ -614,6 +624,11 @@ dap.configurations.cpp = {
     cwd = '${workspaceFolder}',
     stopOnEntry = false,
     args = {},
+    initCommands = function ()
+      local commands = {}
+      table.insert(commands, "breakpoint name configure --disable cpp_exception")
+      return commands
+    end
   },
 }
 
