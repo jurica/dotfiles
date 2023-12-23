@@ -8,7 +8,8 @@ end
 
 config.color_scheme='nord-light'
 
-config.font = wezterm.font 'FiraMono Nerd Font'
+config.font = wezterm.font('FiraMono Nerd Font')
+config.font = wezterm.font('RobotoMono Nerd Font')
 config.font_size = 14
 
 config.window_decorations = 'RESIZE'
@@ -29,12 +30,6 @@ tab_bar_colors['nord-light']['active_tab_bg'] = '#81A1C1'
 tab_bar_colors['nord-light']['active_tab_fg'] = '#ECEFF4'
 tab_bar_colors['nord-light']['tab_bg']        = '#E5E9F0'
 tab_bar_colors['nord-light']['tab_fg']        = '#434C5E'
-tab_bar_colors['dirtysea (base16)'] = {}
-tab_bar_colors['dirtysea (base16)']['background']    = '#ECEFF4'
-tab_bar_colors['dirtysea (base16)']['active_tab_bg'] = '#81A1C1'
-tab_bar_colors['dirtysea (base16)']['active_tab_fg'] = '#ECEFF4'
-tab_bar_colors['dirtysea (base16)']['tab_bg']        = '#E5E9F0'
-tab_bar_colors['dirtysea (base16)']['tab_fg']        = '#434C5E'
 config.colors = {
   tab_bar = {
     background = tab_bar_colors[config.color_scheme]['background'],
@@ -69,6 +64,8 @@ config.keys = {
   { key = 'j', mods = 'ALT', action = act.ActivatePaneDirection 'Down', },
   { key = 'k', mods = 'ALT', action = act.ActivatePaneDirection 'Up', },
   { key = 'l', mods = 'ALT', action = act.ActivatePaneDirection 'Right', },
+  { key = ',', mods = 'ALT', action = act.ActivateTabRelative(-1) },
+  { key = '.', mods = 'ALT', action = act.ActivateTabRelative(1) },
 }
 
 config.key_tables = {
