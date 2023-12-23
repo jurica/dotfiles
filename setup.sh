@@ -56,6 +56,10 @@ mkdir -p ~/.config/delta
 rm -f ~/.config/delta/themes.gitconfig
 ln -s "$(realpath delta/themes.gitconfig)" ~/.config/delta/themes.gitconfig
 
+echo ' ** setup wezterm'
+rm -f ~/.wezterm.lua
+ln -s "$(realpath wezterm/wezterm.lua)" ~/.wezterm.lua
+
 echo '* finished setup of dotfiles'
 
 cat << EOF

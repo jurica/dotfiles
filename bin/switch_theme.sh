@@ -61,3 +61,8 @@ LIGHT="\"nord-light\""
 DARK="\"nord\""
 switch_theme "$TO_DARK" "$LIGHT" "$DARK" "$CONFIG"
 
+# wezterm replace rules
+CONFIG="${SCRIPT_DIR}/../wezterm/wezterm.lua"
+LIGHT="config.color_scheme='nord-light'"
+DARK="config.color_scheme='nord'"
+switch_theme "$TO_DARK" "$LIGHT" "$DARK" "$CONFIG"
