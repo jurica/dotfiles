@@ -66,6 +66,8 @@ config.keys = {
   { key = 'l', mods = 'ALT', action = act.ActivatePaneDirection 'Right', },
   { key = ',', mods = 'ALT', action = act.ActivateTabRelative(-1) },
   { key = '.', mods = 'ALT', action = act.ActivateTabRelative(1) },
+  { key = ',', mods = 'ALT|CMD', action = act.MoveTabRelative(-1) },
+  { key = '.', mods = 'ALT|CMD', action = act.MoveTabRelative(1) },
 }
 
 config.key_tables = {
@@ -82,12 +84,11 @@ config.key_tables = {
   },
   pane = {
     { key = 'p', mods = 'ALT', action = 'PopKeyTable' },
-    { key = ']', action = act.ActivateTabRelative(1) },
-    { key = '[', action = act.ActivateTabRelative(-1) },
     { key = 'v', action = act.SplitHorizontal {domain="CurrentPaneDomain"} },
     { key = 's', action = act.SplitVertical {domain="CurrentPaneDomain"} },
     { key = 'Space', action = act.PaneSelect },
-    { key = 'Tab', action = act.ShowTabNavigator },
+    { key = 'Tab', action = act.PaneSelect {mode="SwapWithActive"} },
+    { key = 't', action = act.ShowTabNavigator },
     { key = 'n', action = act.SpawnTab 'CurrentPaneDomain' },
     { key = 'r', action = act.ActivateKeyTable {name="pane_resize", one_shot=false} },
     { key = '0', action = act.ClearScrollback 'ScrollbackAndViewport' },
