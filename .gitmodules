@@ -7,3 +7,6 @@
 [submodule "delta"]
 	path = delta
 	url = git@github.com:dandavison/delta.git
+[submodule "omzsh-theme-nord-extended"]
+	path = omzsh-theme-nord-extended
+	url = git@github.com:jurica/nord-extended.git
