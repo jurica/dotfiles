@@ -333,20 +333,18 @@ pcall(require('telescope').load_extension, 'fzf')
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
--- vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader><space>', function ()
-  require('telescope.builtin').buffers{
-    attach_mappings = function (prompt_bufnr, map)
-      local delete_buf = function ()
-        local selection = require('telescope.actions.state').get_selected_entry()
-        require('telescope.actions').close(prompt_bufnr)
-        vim.api.nvim_buf_delete(selection.bufnr, { force = true })
-      end
-      map('i', '<C-d>', delete_buf)
-      map('n', 'd', delete_buf)
-      return true
+  local function mapping(prompt_bufnr, map)
+    local delete_buf = function ()
+      local selection = require('telescope.actions.state').get_selected_entry()
+      require('telescope.actions').close(prompt_bufnr)
+      vim.api.nvim_buf_delete(selection.bufnr, { force = true })
+      require('telescope.builtin').buffers{ attach_mappings = mapping  }
     end
-  }
+    map('i', '<C-x>', delete_buf)
+    return true
+  end
+  require('telescope.builtin').buffers{ attach_mappings = mapping  }
 end, { desc = '[ ] Find existing buffers' })
 
 vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuzzy_find, { desc = '[/] Fuzzily search in current buffer' })
