@@ -1,6 +1,3 @@
-[submodule "kickstart.nvim"]
-	path = kickstart.nvim
-	url = git@github.com:jurica/kickstart.nvim.git
 [submodule "alacritty-theme"]
 	path = alacritty-theme
 	url = git@github.com:jurica/alacritty-theme.git
