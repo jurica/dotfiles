@@ -89,6 +89,10 @@ return {
                     capabilities = capabilities,
                     on_attach = on_attach,
                     settings = servers[server_name],
+                    handlers = {
+                        ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {border = 'single'}),
+                        ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {border = 'single'})
+                    },
                 }
             end,
         }
