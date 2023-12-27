@@ -5,7 +5,6 @@ echo '* setup up dotfiles'
 echo ' ** fetch git submodules'
 git submodule init
 git submodule update
-git -C kickstart.nvim checkout jurica
 
 echo ' ** setup zsh'
 rm -f ~/.zshrc
@@ -32,7 +31,7 @@ ln -s "$(realpath alacritty-theme/themes)" ~/.config/alacritty/themes
 
 echo ' ** setup nvim config'
 rm -f ~/.config/nvim
-ln -s "$(realpath kickstart.nvim)" ~/.config/nvim
+ln -s "$(realpath nvim)" ~/.config/nvim
 
 echo ' ** setup scripts'
 mkdir -p ~/bin
