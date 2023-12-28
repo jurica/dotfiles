@@ -6,8 +6,11 @@ return {
             shade_terminals = false,
         }
         if vim.fn.has('win32') then
-            opts['shell'] = 'pwsh.exe'
-            vim.opt.shell = 'pwsh.exe'
+            opts['shell'] = 'pwsh.exe -NoLogo -ExecutionPolicy RemoteSigned'
+            vim.opt.shell = opts['shell']
+            vim.opt.shellcmdflag = '-Command'
+            vim.opt.shellxquote = ''
+            vim.opt.shellquote = ''
         end
         require('toggleterm').setup(opts)
 

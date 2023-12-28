@@ -6,7 +6,7 @@ if wezterm.config_builder then
     config = wezterm.config_builder()
 end
 
-config.color_scheme = 'nord-light'
+config.color_scheme = 'dragon-light'
 config.font         = wezterm.font('RobotoMono Nerd Font')
 config.font_size    = 14
 
@@ -46,8 +46,8 @@ themes['nord-light']['cursor_border'] = "#88c0d0"
 themes['nord-light']['cursor_fg']     = "#3b4252"
 themes['nord-light']['selection_bg']  = "#d8dee9"
 themes['nord-light']['selection_fg']  = "#4c556a"
-themes['nord-light']['ansi']          = { "#3b4252", "#bf616a", "#a3be8c", "#c87b2e", "#81a1c1", "#b48ead", "#88c0d0", "#d8dee9" }
-themes['nord-light']['brights']       = { "#4c566a", "#bf616a", "#a3be8c", "#c87b2e", "#81a1c1", "#b48ead", "#8fbcbb", "#eceff4" }
+themes['nord-light']['ansi']          = { "#3b4252", "#bf616a", "#a3be8c", "#c87b2e", "#81a1c1", "#b48ead", "#88c0d0", "#a0a0a0" }
+themes['nord-light']['brights']       = { "#4c566a", "#bf616a", "#a3be8c", "#c87b2e", "#81a1c1", "#b48ead", "#8fbcbb", "#a0a0a0" }
 themes['nord-light']['tab_bar_bg']    = '#ECEFF4'
 themes['nord-light']['active_tab_bg'] = '#81A1C1'
 themes['nord-light']['active_tab_fg'] = '#ECEFF4'
@@ -62,8 +62,8 @@ themes['dragon-light']['cursor_border'] = "#c8c8c8"
 themes['dragon-light']['cursor_fg']     = "#1b1b1b"
 themes['dragon-light']['selection_bg']  = "#E7E7E7"
 themes['dragon-light']['selection_fg']  = "#a0a0a0"
-themes['dragon-light']['ansi']          = { "#1b1b1b", "#b73242", "#6a824f", "#c87b2e", "#658594", "#b1b1d2", "#658594", "#FFFFFF" }
-themes['dragon-light']['brights']       = { "#1b1b1b", "#b73242", "#6a824f", "#c87b2e", "#658594", "#b1b1d2", "#658594", "#FFFFFF" }
+themes['dragon-light']['ansi']          = { "#1b1b1b", "#b73242", "#6a824f", "#c87b2e", "#658594", "#b1b1d2", "#658594", "#a0a0a0" }
+themes['dragon-light']['brights']       = { "#1b1b1b", "#b73242", "#6a824f", "#c87b2e", "#658594", "#b1b1d2", "#658594", "#a0a0a0" }
 themes['dragon-light']['tab_bar_bg']    = '#E7E7E7'
 themes['dragon-light']['active_tab_bg'] = '#f6f6f6'
 themes['dragon-light']['active_tab_fg'] = '#1b1b1b'
