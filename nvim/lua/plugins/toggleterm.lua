@@ -5,7 +5,7 @@ return {
         local opts = {
             shade_terminals = false,
         }
-        if vim.fn.has('win32') then
+        if os.getenv('OS') == 'Windows_NT' then
             opts['shell'] = 'pwsh.exe -NoLogo -ExecutionPolicy RemoteSigned'
             vim.opt.shell = opts['shell']
             vim.opt.shellcmdflag = '-Command'
