@@ -12,65 +12,68 @@ config.font_size    = 14
 
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
     config.default_prog = { 'pwsh.exe' }
-    config.font_size    = 11
+    config.font_size    = 10.5
 end
 
-config.window_decorations             = 'RESIZE'
+config.window_decorations     = 'RESIZE'
 
-config.use_fancy_tab_bar              = false
-config.enable_tab_bar                 = true
+config.use_fancy_tab_bar      = false
+config.enable_tab_bar         = true
 
-local themes                          = {}
+local themes                  = {}
 
-themes['nord']                        = {}
-themes['nord']['foreground']          = "#d8dee9"
-themes['nord']['background']          = "#2e3440"
-themes['nord']['cursor_bg']           = "#eceff4"
-themes['nord']['cursor_border']       = "#eceff4"
-themes['nord']['cursor_fg']           = "#282828"
-themes['nord']['selection_bg']        = "#eceff4"
-themes['nord']['selection_fg']        = "#4c566a"
-themes['nord']['ansi']                = { "#3b4252", "#bf616a", "#a3be8c", "#ebcb8b", "#81a1c1", "#b48ead", "#88c0d0", "#e5e9f0" }
-themes['nord']['brights']             = { "#4c566a", "#bf616a", "#a3be8c", "#ebcb8b", "#81a1c1", "#b48ead", "#8fbcbb", "#eceff4" }
-themes['nord']['tab_bar_bg']          = '#2E3440'
-themes['nord']['active_tab_bg']       = '#81A1C1'
-themes['nord']['active_tab_fg']       = '#2E3440'
-themes['nord']['tab_bg']              = '#3B4252'
-themes['nord']['tab_fg']              = '#D8DEE9'
+local nord                    = {}
+nord['foreground']            = "#d8dee9"
+nord['background']            = "#2e3440"
+nord['cursor_bg']             = "#eceff4"
+nord['cursor_border']         = "#eceff4"
+nord['cursor_fg']             = "#282828"
+nord['selection_bg']          = "#eceff4"
+nord['selection_fg']          = "#4c566a"
+nord['ansi']                  = { "#3b4252", "#bf616a", "#a3be8c", "#ebcb8b", "#81a1c1", "#b48ead", "#88c0d0", "#e5e9f0" }
+nord['brights']               = { "#4c566a", "#bf616a", "#a3be8c", "#ebcb8b", "#81a1c1", "#b48ead", "#8fbcbb", "#eceff4" }
+nord['tab_bar_bg']            = '#2E3440'
+nord['active_tab_bg']         = '#81A1C1'
+nord['active_tab_fg']         = '#2E3440'
+nord['tab_bg']                = '#3B4252'
+nord['tab_fg']                = '#D8DEE9'
+themes['nord']                = nord
 
-themes['nord-light']                  = {}
-themes['nord-light']['foreground']    = "#414858"
-themes['nord-light']['background']    = "#e5e9f0"
-themes['nord-light']['cursor_bg']     = "#88c0d0"
-themes['nord-light']['cursor_border'] = "#88c0d0"
-themes['nord-light']['cursor_fg']     = "#3b4252"
-themes['nord-light']['selection_bg']  = "#d8dee9"
-themes['nord-light']['selection_fg']  = "#4c556a"
-themes['nord-light']['ansi']          = { "#3b4252", "#bf616a", "#a3be8c", "#c87b2e", "#81a1c1", "#b48ead", "#88c0d0", "#a0a0a0" }
-themes['nord-light']['brights']       = { "#4c566a", "#bf616a", "#a3be8c", "#c87b2e", "#81a1c1", "#b48ead", "#8fbcbb", "#a0a0a0" }
-themes['nord-light']['tab_bar_bg']    = '#ECEFF4'
-themes['nord-light']['active_tab_bg'] = '#81A1C1'
-themes['nord-light']['active_tab_fg'] = '#ECEFF4'
-themes['nord-light']['tab_bg']        = '#E5E9F0'
-themes['nord-light']['tab_fg']        = '#434C5E'
+local nord_light              = {}
+nord_light['foreground']      = "#414858"
+nord_light['background']      = "#e5e9f0"
+nord_light['cursor_bg']       = "#88c0d0"
+nord_light['cursor_border']   = "#88c0d0"
+nord_light['cursor_fg']       = "#3b4252"
+nord_light['selection_bg']    = "#d8dee9"
+nord_light['selection_fg']    = "#4c556a"
+nord_light['ansi']            = { "#3b4252", "#bf616a", "#a3be8c", "#c87b2e", "#81a1c1", "#b48ead", "#88c0d0", "#a0a0a0" }
+nord_light['brights']         = { "#4c566a", "#bf616a", "#a3be8c", "#c87b2e", "#81a1c1", "#b48ead", "#8fbcbb", "#a0a0a0" }
+nord_light['tab_bar_bg']      = '#ECEFF4'
+nord_light['active_tab_bg']   = '#81A1C1'
+nord_light['active_tab_fg']   = '#ECEFF4'
+nord_light['tab_bg']          = '#E5E9F0'
+nord_light['tab_fg']          = '#434C5E'
+themes['nord-light']          = nord_light
 
-themes['dragon-light']                  = {}
-themes['dragon-light']['foreground']    = "#1b1b1b"
-themes['dragon-light']['background']    = "#E7E7E7"
-themes['dragon-light']['cursor_bg']     = "#c8c8c8"
-themes['dragon-light']['cursor_border'] = "#c8c8c8"
-themes['dragon-light']['cursor_fg']     = "#1b1b1b"
-themes['dragon-light']['selection_bg']  = "#E7E7E7"
-themes['dragon-light']['selection_fg']  = "#a0a0a0"
-themes['dragon-light']['ansi']          = { "#1b1b1b", "#b73242", "#6a824f", "#c87b2e", "#658594", "#b1b1d2", "#658594", "#a0a0a0" }
-themes['dragon-light']['brights']       = { "#1b1b1b", "#b73242", "#6a824f", "#c87b2e", "#658594", "#b1b1d2", "#658594", "#a0a0a0" }
-themes['dragon-light']['tab_bar_bg']    = '#E7E7E7'
-themes['dragon-light']['active_tab_bg'] = '#f6f6f6'
-themes['dragon-light']['active_tab_fg'] = '#1b1b1b'
-themes['dragon-light']['tab_bg']        = '#EEEEEE'
-themes['dragon-light']['tab_fg']        = '#A2A2A2'
+local dragon_light            = {}
+dragon_light['foreground']    = "#1b1b1b"
+dragon_light['background']    = "#E7E7E7"
+dragon_light['cursor_bg']     = "#c8c8c8"
+dragon_light['cursor_border'] = "#c8c8c8"
+dragon_light['cursor_fg']     = "#1b1b1b"
+dragon_light['selection_bg']  = "#d8d8d8"
+dragon_light['selection_fg']  = "#a0a0a0"
+dragon_light['ansi']          = { "#1b1b1b", "#b73242", "#6a824f", "#c87b2e", "#658594", "#b1b1d2", "#658594", "#a0a0a0" }
+dragon_light['brights']       = { "#1b1b1b", "#b73242", "#6a824f", "#c87b2e", "#658594", "#b1b1d2", "#658594", "#a0a0a0" }
+dragon_light['tab_bar_bg']    = '#E7E7E7'
+dragon_light['active_tab_bg'] = '#f6f6f6'
+dragon_light['active_tab_fg'] = '#1b1b1b'
+dragon_light['tab_bg']        = '#EEEEEE'
+dragon_light['tab_fg']        = '#A2A2A2'
+themes['dragon-light']        = dragon_light
 
-config.colors                         = {
+config.colors                 = {
     foreground = themes[config.color_scheme]['foreground'],
     background = themes[config.color_scheme]['background'],
     cursor_fg = themes[config.color_scheme]['cursor_fg'],
@@ -105,7 +108,7 @@ config.colors                         = {
     },
 }
 
-config.keys                           = {
+config.keys                   = {
     { key = "LeftArrow",  mods = "OPT",     action = wezterm.action { SendString = "\x1bb" } },
     { key = "RightArrow", mods = "OPT",     action = wezterm.action { SendString = "\x1bf" } },
     { key = 'q',          mods = 'CMD',     action = act.Nop, },
@@ -119,8 +122,14 @@ config.keys                           = {
     { key = ',',          mods = 'ALT|CMD', action = act.MoveTabRelative(-1) },
     { key = '.',          mods = 'ALT|CMD', action = act.MoveTabRelative(1) },
 }
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+    table.insert(config.keys,
+        { key = "LeftArrow", mods = "OPT", action = act.SendKey { key = 'LeftArrow', mods = 'CTRL' } })
+    table.insert(config.keys,
+        { key = "RightArrow", mods = "OPT", action = act.SendKey { key = 'RightArrow', mods = 'CTRL' } })
+end
 
-config.key_tables                     = {
+config.key_tables = {
     pane_resize = {
         { key = 'LeftArrow',  action = act.AdjustPaneSize { 'Left', 1 } },
         { key = 'h',          action = act.AdjustPaneSize { 'Left', 5 } },
