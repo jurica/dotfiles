@@ -6,7 +6,7 @@ if wezterm.config_builder then
     config = wezterm.config_builder()
 end
 
-config.color_scheme = 'nord-light'
+config.color_scheme = 'dragon-light'
 config.font         = wezterm.font('RobotoMono Nerd Font')
 config.font_size    = 14
 
