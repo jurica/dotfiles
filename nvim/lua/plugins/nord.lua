@@ -1,3 +1,3 @@
 return {
-    'jurica/nord.nvim',
+    'jurica/nord.nvim'
 }
