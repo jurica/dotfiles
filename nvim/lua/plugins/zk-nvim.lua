@@ -3,6 +3,11 @@ return {
     config = function()
         require("zk").setup({
             picker = "telescope",
+            config = {
+                on_attach = {
+                    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'follow link' })
+                }
+            }
         })
 
         vim.keymap.set('n', '<leader>zkn', "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", { desc = '[zk] [N]ew Note' })

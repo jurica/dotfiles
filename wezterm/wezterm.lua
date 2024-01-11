@@ -140,7 +140,7 @@ config.key_tables = {
         { key = 'DownArrow',  action = act.AdjustPaneSize { 'Down', 1 } },
         { key = 'j',          action = act.AdjustPaneSize { 'Down', 5 } },
         { key = 'Escape',     action = act.ClearKeyTableStack },
-        { key = 'Enter',     action = act.ClearKeyTableStack },
+        { key = 'Enter',      action = act.ClearKeyTableStack },
     },
     pane = {
         { key = 'p',      mods = 'ALT',                                                            action = 'PopKeyTable' },
@@ -154,7 +154,7 @@ config.key_tables = {
         { key = '0',      action = act.ClearScrollback 'ScrollbackAndViewport' },
         { key = 'z',      action = act.TogglePaneZoomState },
         { key = 'Escape', action = 'PopKeyTable' },
-        { key = 'Enter', action = 'PopKeyTable' },
+        { key = 'Enter',  action = 'PopKeyTable' },
     },
 }
 
