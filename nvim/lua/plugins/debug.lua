@@ -32,6 +32,14 @@ return {
                 initCommands = function()
                     local commands = {}
                     table.insert(commands, "breakpoint name configure --disable cpp_exception")
+                    table.insert(commands, "command script import /Users/jurica.bacurin/Repos/SSE/Dev/ExternalLibs/lldb-qt-formatters/QtFormatters.py")
+                    table.insert(commands, "command source /Users/jurica.bacurin/Repos/SSE/Dev/ExternalLibs/lldb-qt-formatters/QtFormatters.lldb")
+                    -- local py =  vim.fn.expand("~/Repos/SSE/Dev/ExternalLibs/lldb-qt-formatters/QtFormatters.py")
+                    -- local lldb = vim.fn.expand("~/Repos/SSE/Dev/ExternalLibs/lldb-qt-formatters/QtFormatters.lldb")
+                    -- if vim.fn.filereadable(py) then
+                    --     table.insert(commands, "command script import " .. py)
+                    --     table.insert(commands, "command source " .. lldb)
+                    -- end
                     return commands
                 end
             },
@@ -77,7 +85,7 @@ return {
             args = { '-m', 'debugpy.adapter' },
         }
 
-        vim.fn.sign_define('DapStopped', { text = '▶️', texthl = '', linehl = '', numhl = '' })
+        vim.fn.sign_define('DapStopped', { text = '󰏤', texthl = '', linehl = '', numhl = '' })
 
         vim.keymap.set('n', '<F5>', dap.continue)
         vim.keymap.set('n', '<F1>', dap.step_into)
@@ -92,14 +100,14 @@ return {
             icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
             controls = {
                 icons = {
-                    pause = '⏸',
+                    pause = '󰏤',
                     play = '▶',
                     step_into = '',
                     step_over = '',
                     step_out = '',
                     step_back = '',
                     run_last = '',
-                    terminate = '⏹',
+                    terminate = '󰓛',
                 },
             },
         }
