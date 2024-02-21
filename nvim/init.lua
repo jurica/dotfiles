@@ -42,6 +42,8 @@ vim.o.updatetime = 250
 vim.o.whichwrap = "h,l,<,>"
 vim.wo.number = true
 vim.wo.signcolumn = 'yes'
+vim.o.listchars="eol:↲,tab:▸-,trail:~,extends:→,precedes:←,space:."
+vim.o.list = true
 
 vim.g.nord_borders = true
 vim.g.nord_italic = false
