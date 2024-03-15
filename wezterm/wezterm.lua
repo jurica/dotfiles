@@ -159,7 +159,12 @@ config.key_tables = {
 }
 
 wezterm.on('format-tab-title', function(tab, _tabs, _panes, _config, _hover, _max_width)
-    local title = string.format(" %d ", tab.tab_index + 1)
+    local title
+    if tab.active_pane.is_zoomed then
+        title = string.format("[%d]", tab.tab_index + 1)
+    else
+        title = string.format(" %d ", tab.tab_index + 1)
+    end
     return title
 end)
 

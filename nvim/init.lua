@@ -44,6 +44,7 @@ vim.wo.number = true
 vim.wo.signcolumn = 'yes'
 vim.o.listchars="eol:↲,tab:▸-,trail:~,extends:→,precedes:←,space:."
 vim.o.list = true
+vim.o.conceallevel = 0
 
 vim.g.nord_borders = true
 vim.g.nord_italic = false
