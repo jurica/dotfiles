@@ -59,6 +59,10 @@ echo ' ** setup wezterm'
 rm -f ~/.wezterm.lua
 ln -s "$(realpath wezterm/wezterm.lua)" ~/.wezterm.lua
 
+echo ' ** setup warpd'
+rm -f ~/.config/warpd/config
+ln -s "$(realpath warpd/config)" ~/.config/warpd/config
+
 echo '* finished setup of dotfiles'
 
 cat << EOF
