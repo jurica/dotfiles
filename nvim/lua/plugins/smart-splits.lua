@@ -2,7 +2,7 @@
 return {
   'mrjones2014/smart-splits.nvim',
   config = function ()
-    vim.keymap.set('n', '<leader>h', require('smart-splits').start_resize_mode, { desc = '[h] Enter resize mode'})
+    vim.keymap.set('n', '<c-w>r', require('smart-splits').start_resize_mode, { desc = '[h] Enter resize mode'})
     vim.keymap.set('n', '<leader><Left>', require('smart-splits').move_cursor_left, { desc = '[󰁍] move focus left'})
     vim.keymap.set('n', '<leader><Down>', require('smart-splits').move_cursor_down, { desc = '[󰁅] move focus down'})
     vim.keymap.set('n', '<leader><Up>', require('smart-splits').move_cursor_up, { desc = '[󰁝] move focus up'})

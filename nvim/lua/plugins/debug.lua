@@ -14,7 +14,8 @@ return {
             type = 'server',
             port = "${port}",
             executable = {
-                command = vim.fn.exepath('codelldb'),
+                -- command = vim.fn.exepath('codelldb'),
+                command = '/Users/jurica.bacurin/.local/share/nvim/mason/bin/codelldb',
                 args = { "--port", "${port}" },
             },
         }
@@ -32,19 +33,16 @@ return {
                 initCommands = function()
                     local commands = {}
                     table.insert(commands, "breakpoint name configure --disable cpp_exception")
-                    table.insert(commands, "command script import /Users/jurica.bacurin/Repos/SSE/Dev/ExternalLibs/lldb-qt-formatters/QtFormatters.py")
-                    table.insert(commands, "command source /Users/jurica.bacurin/Repos/SSE/Dev/ExternalLibs/lldb-qt-formatters/QtFormatters.lldb")
-                    -- local py =  vim.fn.expand("~/Repos/SSE/Dev/ExternalLibs/lldb-qt-formatters/QtFormatters.py")
-                    -- local lldb = vim.fn.expand("~/Repos/SSE/Dev/ExternalLibs/lldb-qt-formatters/QtFormatters.lldb")
-                    -- if vim.fn.filereadable(py) then
-                    --     table.insert(commands, "command script import " .. py)
-                    --     table.insert(commands, "command source " .. lldb)
-                    -- end
+                    local py   = vim.fn.expand("~/lldb-qt-formatters/QtFormatters.py")
+                    local lldb = vim.fn.expand("~/lldb-qt-formatters/QtFormatters.lldb")
+                    if vim.fn.filereadable(py) then
+                        table.insert(commands, "command script import " .. py)
+                        table.insert(commands, "command source " .. lldb)
+                    end
                     return commands
                 end
             },
         }
-
         vim.api.nvim_create_user_command('SetDebuggee',
             function()
                 local dap = require 'dap'
@@ -79,6 +77,7 @@ return {
         vim.api.nvim_create_user_command('DapLoadLldbForCpp',
             function() require('dap.ext.vscode').load_launchjs(vim.fn.getcwd() .. '/.vscode/launch.json',
                     { lldb = { 'cpp', } }) end, { nargs = 0 })
+
         dap.adapters.python = {
             type = 'executable',
             command = '/Users/jurica.bacurin/.local/share/nvim/mason/packages/debugpy/venv/bin/python',
@@ -86,6 +85,8 @@ return {
         }
 
         vim.fn.sign_define('DapStopped', { text = '󰏤', texthl = '', linehl = '', numhl = '' })
+
+        require('dap-go').setup()
 
         vim.keymap.set('n', '<F5>', dap.continue)
         vim.keymap.set('n', '<F1>', dap.step_into)
