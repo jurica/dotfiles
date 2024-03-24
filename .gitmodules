@@ -7,3 +7,6 @@
 [submodule "omzsh-theme-nord-extended"]
 	path = omzsh-theme-nord-extended
 	url = git@github.com:jurica/nord-extended.git
+[submodule "zsh-fzf-history-search"]
+	path = zsh-fzf-history-search
+	url = https://github.com/joshskidmore/zsh-fzf-history-search
