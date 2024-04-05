@@ -113,5 +113,5 @@ return {
     --       }
     --     end
     --     lspconfig.qml6_lsp.setup{}
-    -- end
+    end
 }

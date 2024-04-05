@@ -17,10 +17,7 @@ elseif wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
     config.font_size    = 12
 end
 
-if wezterm.target_triple ~= 'x86_64-unknown-linux-gnu' then
-    config.window_decorations     = 'RESIZE'
-end
-
+config.window_decorations     = 'RESIZE'
 config.use_fancy_tab_bar      = false
 config.enable_tab_bar         = true
 
