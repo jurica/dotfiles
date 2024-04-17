@@ -12,9 +12,7 @@ return {
         }
         require('tabby.tabline').set(function(line)
             local segments = vim.split(vim.fn.getcwd(), '/')
-            local dirName = segments[#segments]
             return {
-                { "  " .. dirName .. " " },
                 line.tabs().foreach(
                     function(tab)
                         local hl = tab.is_current() and theme.current_tab or theme.tab
@@ -25,6 +23,7 @@ return {
                     end
                 ),
                 line.spacer(),
+                { "  " .. segments[# segments] },
                 hl = theme.fill,
             }
         end)

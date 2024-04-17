@@ -173,12 +173,40 @@ wezterm.on('format-tab-title', function(tab, _tabs, _panes, _config, _hover, _ma
     return title
 end)
 
-wezterm.on('update-right-status', function(window, pane)
+wezterm.on('update-status', function(window, pane)
     local name = window:active_key_table()
-    if name then
-        name = 'MODE: ' .. name
+    local display_name = ''
+    if name == 'pane' then
+        bg = config.colors.ansi[3]
+        fg = config.colors.background
+        display_name = '   PANE   '
+    elseif name == 'pane_resize' then
+        bg = config.colors.ansi[4]
+        fg = config.colors.background
+        display_name = ' P-RESIZE '
+    elseif name == 'copy_mode' then
+        bg = config.colors.ansi[2]
+        fg = config.colors.background
+        display_name = '   COPY   '
+    elseif name == 'search_mode' then
+        bg = config.colors.ansi[5]
+        fg = config.colors.background
+        display_name = '  SEARCH  '
+    else
+        bg = config.colors.foreground
+        fg = config.colors.background
+        display_name = '  NORMAL  '
     end
-    window:set_right_status(name or '')
+    local mode = wezterm.format{
+        { Background = { Color = bg } },
+        { Foreground = { Color = fg } },
+        { Text = display_name }
+    }
+    window:set_left_status(mode)
+    local cwd = pane:get_current_working_dir()
+    if cwd then
+        window:set_right_status(' ' .. pane:get_current_working_dir().file_path .. ' ')
+    end
 end)
 
 return config
