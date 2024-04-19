@@ -1,0 +1,22 @@
+[kwin][Global Shortcuts]
+KZones: Cycle layouts=Ctrl+Alt+?; Ctrl+Alt+Shift+Z
+KZones: Move active window to next zone=; Ctrl+Alt+Shift+P
+KZones: Move active window to previous zone=Ctrl+Alt+Shift+Q;\s
+KZones: Move active window to zone 1=Ctrl+Alt+Shift+D; Ctrl+Alt+Shift+H
+KZones: Move active window to zone 10=Ctrl+Alt+Shift+C
+KZones: Move active window to zone 11=Ctrl+Alt+Shift+V
+KZones: Move active window to zone 12=Ctrl+Alt+Shift+B
+KZones: Move active window to zone 13=Ctrl+Alt+Shift+N
+KZones: Move active window to zone 14=Ctrl+Alt+Shift+M
+KZones: Move active window to zone 15=Ctrl+Alt+<
+KZones: Move active window to zone 2=Ctrl+Alt+Shift+J; Ctrl+Alt+Shift+F
+KZones: Move active window to zone 3=Ctrl+Alt+Shift+G; Ctrl+Alt+Shift+K
+KZones: Move active window to zone 4=Ctrl+Alt+Shift+E
+KZones: Move active window to zone 5=Ctrl+Alt+Shift+R
+KZones: Move active window to zone 6=Ctrl+Alt+Shift+T
+KZones: Move active window to zone 7=Ctrl+Alt+Shift+Y
+KZones: Move active window to zone 8=Ctrl+Alt+Shift+U
+KZones: Move active window to zone 9=Ctrl+Alt+Shift+I
+KZones: Switch to next window in current zone=Ctrl+Alt+:;\s
+KZones: Switch to previous window in current zone=Ctrl+Alt+Shift+A;\s
+KZones: Toggle zone overlay=

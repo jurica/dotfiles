@@ -176,6 +176,7 @@ end)
 wezterm.on('update-status', function(window, pane)
     local name = window:active_key_table()
     local display_name = ''
+    local fg, bg
     if name == 'pane' then
         bg = config.colors.ansi[3]
         fg = config.colors.background
@@ -193,8 +194,8 @@ wezterm.on('update-status', function(window, pane)
         fg = config.colors.background
         display_name = '  SEARCH  '
     else
-        bg = config.colors.foreground
-        fg = config.colors.background
+        bg = themes[config.color_scheme]['active_tab_bg']
+        fg = themes[config.color_scheme]['active_tab_fg']
         display_name = '  NORMAL  '
     end
     local mode = wezterm.format{
