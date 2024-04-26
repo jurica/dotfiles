@@ -141,7 +141,6 @@ config.keys                   = {
     nvim_passthrough('.', 'ALT', act.ActivateTabRelative(1) ),
     nvim_passthrough(',', 'ALT|CTRL', act.MoveTabRelative(-1) ),
     nvim_passthrough('.', 'ALT|CTRL', act.MoveTabRelative(1) ),
-    nvim_passthrough('w', 'CTRL', act.ActivateKeyTable{name = 'pane', }),
 }
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
     table.insert(config.keys,
