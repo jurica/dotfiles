@@ -109,21 +109,39 @@ config.colors                 = {
     },
 }
 
+local function nvim_passthrough(key, mods, wezterm_action)
+    local action = wezterm.action_callback(function (win, pane)
+        if pane:get_user_vars().IS_NVIM == 'true' then
+            win:perform_action({ SendKey = {key = key, mods = mods} }, pane)
+        else
+            win:perform_action( wezterm_action, pane)
+        end
+    end)
+    return { key = key, mods = mods, action = action, }
+end
+
 config.keys                   = {
     { key = "LeftArrow",  mods = "OPT",     action = wezterm.action { SendString = "\x1bb" } },
     { key = "RightArrow", mods = "OPT",     action = wezterm.action { SendString = "\x1bf" } },
     { key = 'q',          mods = 'CMD',     action = act.Nop, },
     { key = 'p',          mods = 'ALT',     action = act.ActivateKeyTable { name = 'pane', }, },
-    { key = 'h',          mods = 'ALT',     action = act.ActivatePaneDirection 'Left', },
-    { key = 'j',          mods = 'ALT',     action = act.ActivatePaneDirection 'Down', },
-    { key = 'k',          mods = 'ALT',     action = act.ActivatePaneDirection 'Up', },
-    { key = 'l',          mods = 'ALT',     action = act.ActivatePaneDirection 'Right', },
-    { key = ',',          mods = 'ALT',     action = act.ActivateTabRelative(-1) },
-    { key = '.',          mods = 'ALT',     action = act.ActivateTabRelative(1) },
-    { key = ',',          mods = 'ALT|CMD', action = act.MoveTabRelative(-1) },
-    { key = '.',          mods = 'ALT|CMD', action = act.MoveTabRelative(1) },
-    { key = ',',          mods = 'CTRL',    action = act.RotatePanes 'CounterClockwise' },
-    { key = '.',          mods = 'CTRL',    action = act.RotatePanes 'Clockwise' },
+    { key = '.',          mods = 'CTRL',    action = act.RotatePanes 'CounterClockwise' },
+    { key = ',',          mods = 'CTRL',    action = act.RotatePanes 'Clockwise' },
+    { key = ',',          mods = 'ALT|CMD',  action = act.ActivateTabRelative(-1) },
+    { key = '.',          mods = 'ALT|CMD',  action = act.ActivateTabRelative(1) },
+    nvim_passthrough('h', 'ALT', { ActivatePaneDirection = 'Left' } ),
+    nvim_passthrough('j', 'ALT', { ActivatePaneDirection = 'Down' }),
+    nvim_passthrough('k', 'ALT', { ActivatePaneDirection = 'Up' }),
+    nvim_passthrough('l', 'ALT', { ActivatePaneDirection = 'Right' }),
+    nvim_passthrough('h', 'CTRL', { AdjustPaneSize = {'Left',1} } ),
+    nvim_passthrough('j', 'CTRL', { AdjustPaneSize = {'Down',1} }),
+    nvim_passthrough('k', 'CTRL', { AdjustPaneSize = {'Up',1} }),
+    nvim_passthrough('l', 'CTRL', { AdjustPaneSize = {'Right',1} }),
+    nvim_passthrough(',', 'ALT', act.ActivateTabRelative(-1) ),
+    nvim_passthrough('.', 'ALT', act.ActivateTabRelative(1) ),
+    nvim_passthrough(',', 'ALT|CTRL', act.MoveTabRelative(-1) ),
+    nvim_passthrough('.', 'ALT|CTRL', act.MoveTabRelative(1) ),
+    nvim_passthrough('w', 'CTRL', act.ActivateKeyTable{name = 'pane', }),
 }
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
     table.insert(config.keys,
@@ -142,8 +160,6 @@ config.key_tables = {
         { key = 'k',          action = act.AdjustPaneSize { 'Up', 5 } },
         { key = 'DownArrow',  action = act.AdjustPaneSize { 'Down', 1 } },
         { key = 'j',          action = act.AdjustPaneSize { 'Down', 5 } },
-        { key = ',',          action = act.RotatePanes 'CounterClockwise' },
-        { key = '.',          action = act.RotatePanes 'Clockwise' },
         { key = 'Escape',     action = act.ClearKeyTableStack },
         { key = 'Enter',      action = act.ClearKeyTableStack },
     },
