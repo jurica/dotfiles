@@ -1,4 +1,12 @@
+Function Get-TimeStamp {
+    return "[{0:dd.MM.yy} {0:HH:mm:ss.fff}" -f (Get-Date)
+}
+
 $env:PATH = "C:\Users\juric\AppData\Local\w64devkit\bin;" + $env:PATH
+$env:VISUAL = "nvim"
+$env:EDITOR = "nvim"
+
+Set-PSReadLineOption -EditMode Emacs
 
 Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
 Set-PSReadlineKeyHandler -Chord Tab -Function MenuComplete
