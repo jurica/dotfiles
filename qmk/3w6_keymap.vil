@@ -317,8 +317,8 @@
       [
         -1,
         -1,
-        "KC_NO",
-        "KC_NO",
+        "KC_LCTRL",
+        "KC_LALT",
         "KC_NO"
       ],
       [
@@ -1075,14 +1075,14 @@
       "KC_X",
       "KC_NO",
       "KC_NO",
-      "KC_LSHIFT"
+      "OSM(MOD_LSFT)"
     ],
     [
       "KC_DOT",
       "KC_SLASH",
       "KC_NO",
       "KC_NO",
-      "KC_RSHIFT"
+      "OSM(MOD_LSFT)"
     ],
     [
       "KC_NO",
@@ -1548,7 +1548,7 @@
     "2": 50,
     "3": 3,
     "4": 175,
-    "5": 5,
+    "5": 3,
     "6": 5000,
     "7": 200,
     "8": 5,
