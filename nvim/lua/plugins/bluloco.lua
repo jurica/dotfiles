@@ -1,0 +1,12 @@
+return {
+  'uloco/bluloco.nvim',
+  lazy = false,
+  priority = 1000,
+  dependencies = { 'rktjmp/lush.nvim' },
+  config = function()
+        require('bluloco').setup({
+            style = "auto",
+        })
+    -- your optional config goes here, see below.
+  end,
+}
