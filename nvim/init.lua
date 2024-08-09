@@ -58,6 +58,7 @@ vim.keymap.set('n', '<M-C-,>', ":tabmove -1<CR>", { desc = 'Tab move left' })
 vim.keymap.set('n', '<M-C-.>', ":tabmove +1<CR>", { desc = 'Tab move right' })
 vim.keymap.set('v', '>', '>gv')
 vim.keymap.set('v', '<', '<gv')
+vim.cmd('set background=light')
 vim.keymap.set('n', '<leader>tb', function ()
   if vim.o.background == 'dark' then
     print("switched to light")
