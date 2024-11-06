@@ -2,7 +2,7 @@ Function Get-TimeStamp {
     return "[{0:dd.MM.yy} {0:HH:mm:ss.fff}" -f (Get-Date)
 }
 
-$env:PATH = "$HOME\AppData\Local\Programs\WezTerm;$HOME\AppData\Local\Programs\w64devkit\bin;" + $env:PATH
+$env:PATH = "$HOME\AppData\Local\Programs\w64devkit\bin;" + $env:PATH
 $env:VISUAL = "nvim"
 $env:EDITOR = "nvim"
 
