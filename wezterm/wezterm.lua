@@ -11,7 +11,7 @@ config.font         = wezterm.font('RobotoMono Nerd Font')
 config.font_size    = 14
 
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
-    config.default_prog = { 'pwsh.exe' }
+    config.default_prog = { 'nu.exe' }
     config.font_size    = 10.5
 elseif wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
     config.font_size    = 12

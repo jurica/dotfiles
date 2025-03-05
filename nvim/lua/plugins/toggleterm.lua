@@ -6,9 +6,14 @@ return {
             shade_terminals = false,
         }
         if os.getenv('OS') == 'Windows_NT' then
-            opts['shell'] = 'pwsh.exe -NoLogo -ExecutionPolicy RemoteSigned'
+            -- opts['shell'] = 'pwsh.exe -NoLogo -ExecutionPolicy RemoteSigned'
+            -- vim.opt.shell = opts['shell']
+            -- vim.opt.shellcmdflag = '-Command'
+            -- vim.opt.shellxquote = ''
+            -- vim.opt.shellquote = ''
+            opts['shell'] = 'nu'
             vim.opt.shell = opts['shell']
-            vim.opt.shellcmdflag = '-Command'
+            vim.opt.shellcmdflag = '-c'
             vim.opt.shellxquote = ''
             vim.opt.shellquote = ''
         end
