@@ -8,7 +8,7 @@ git submodule update
 
 echo ' ** setup zsh'
 rm -f ~/.zshrc
-ln -s "$(realpath zshrc-mbp)" ~/.zshrc
+ln -s "$(realpath zshrc-arch)" ~/.zshrc
 rm -f ~/.oh-my-zsh/themes/nord.zsh-theme
 ln -s "$(realpath omzsh-theme-nord-extended/nord.zsh-theme)" ~/.oh-my-zsh/themes/
 
