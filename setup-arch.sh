@@ -45,6 +45,8 @@ rm -f ~/.config/nushell/env.nu
 ln -s "$(realpath nushell/env.nu)" ~/.config/nushell/env.nu
 rm -f ~/.config/nushell/dragon-light.nu
 ln -s "$(realpath nushell/dragon-light.nu)" ~/.config/nushell/dragon-light.nu
+rm -f ~/.config/nushell/custom-completions
+ln -s "$(realpath nu_scripts/custom-completions)" ~/.config/nushell/custom-completions
 
 echo ' ** setup starship'
 rm -f ~/.config/starship.toml
