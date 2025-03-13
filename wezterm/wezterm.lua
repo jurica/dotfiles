@@ -11,10 +11,11 @@ config.font         = wezterm.font('RobotoMono Nerd Font')
 config.font_size    = 14
 
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
-    config.default_prog = { 'pwsh.exe' }
+    config.default_prog = { 'nu.exe' }
     config.font_size    = 10.5
 elseif wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
     config.font_size    = 12
+    config.default_prog = { 'nu' }
 end
 
 config.window_decorations     = 'RESIZE'
@@ -65,8 +66,8 @@ dragon_light['cursor_border'] = "#c8c8c8"
 dragon_light['cursor_fg']     = "#eeeeee"
 dragon_light['selection_bg']  = "#d8d8d8"
 dragon_light['selection_fg']  = "#a0a0a0"
-dragon_light['ansi']          = { "#1b1b1b", "#b73242", "#6a824f", "#c87b2e", "#658594", "#b1b1d2", "#658594", "#a0a0a0" }
-dragon_light['brights']       = { "#1b1b1b", "#b73242", "#6a824f", "#c87b2e", "#658594", "#b1b1d2", "#658594", "#a0a0a0" }
+dragon_light['ansi']          = { "#1b1b1b", "#b73242", "#6a824f", "#a0713c", "#9fb5c9", "#b1b1d2", "#7aa89f", "#a0a0a0" }
+dragon_light['brights']       = { "#1b1b1b", "#b73242", "#6a824f", "#a0713c", "#9fb5c9", "#b1b1d2", "#7aa89f", "#a0a0a0" }
 dragon_light['tab_bar_bg']    = '#E7E7E7'
 dragon_light['active_tab_bg'] = '#f6f6f6'
 dragon_light['active_tab_fg'] = '#1b1b1b'

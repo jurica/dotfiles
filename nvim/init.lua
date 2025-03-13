@@ -49,6 +49,7 @@ vim.o.conceallevel = 0
 vim.g.nord_borders = true
 vim.g.nord_italic = false
 
+vim.keymap.set('n', 'oo', "i<CR><Esc>", { desc = 'insert newline' })
 vim.keymap.set('n', '<leader>tn', ":tabnew<CR>", { desc = '[T]ab [n]ew' })
 vim.keymap.set('n', '<leader>td', ":tabclose<CR>", { desc = '[T]ab [d]elte' })
 vim.keymap.set('n', '<leader>to', ":tabonly<CR>", { desc = '[T]ab [o]only' })
