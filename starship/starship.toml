@@ -1,6 +1,9 @@
 format = """
-$username \
-$directory \
+$username\
+[@](bold fg:#373e50)\
+$hostname\
+[│](fg:#a0a0a0)\
+$directory\
 $git_branch\
 $git_status\
 $fill\
@@ -14,19 +17,23 @@ symbol = ' '
 show_always = true
 format = '[$user](bold fg:#373e50)'
 
+[hostname]
+ssh_only = false
+format = '[$hostname](bold fg:#373e50)'
+
 [directory]
 format = "[$path](bold fg:#445f96)"
 truncation_length = 5
 truncation_symbol = "…/"
 
 [git_branch]
-symbol = ""
-format = '[$symbol$branch](bold fg:#825c45)'
+symbol = ""
+format = ' [\($symbol$branch](bold fg:#825c45)'
 
 [git_status]
-format = '|[$all_status$ahead_behind](bold fg:#c87b2e)'
+format = '[│](fg:#a0a0a0)[$all_status$ahead_behind](bold fg:#c87b2e)[\)](bold fg:#825c45)'
 
 [time]
 disabled = false
-time_format = "%d.%m.%Y %R" # Hour:Minute Format
+time_format = "%d.%m.%Y %R"
 format = '[$time](bold fg:#1b1b1b)'
