@@ -10,24 +10,11 @@ echo ' ** setup zsh'
 rm -f ~/.zshrc
 ln -s "$(realpath zshrc-arch)" ~/.zshrc
 rm -f ~/.oh-my-zsh/themes/nord.zsh-theme
-ln -s "$(realpath omzsh-theme-nord-extended/nord.zsh-theme)" ~/.oh-my-zsh/themes/
 
 echo ' ** setup direnv'
 mkdir -p ~/.config/direnv
 rm -f ~/.config/direnv/direnv.toml
 ln -s "$(realpath direnv/direnv.toml)" ~/.config/direnv/
-
-echo ' ** setup zellij config'
-mkdir -p ~/.config/zellij
-rm -f ~/.config/zellij/config.kdl
-ln -s "$(realpath zellij/config.kdl)" ~/.config/zellij/config.kdl
-
-echo ' ** setup alacritty config'
-mkdir -p ~/.config/alacritty
-rm -f ~/.config/alacritty/alacritty.yml
-rm -f ~/.config/alacritty/themes
-ln -s "$(realpath alacritty/alacritty.yml)" ~/.config/alacritty/alacritty.yml
-ln -s "$(realpath alacritty-theme/themes)" ~/.config/alacritty/themes
 
 echo ' ** setup nvim config'
 rm -f ~/.config/nvim
@@ -51,13 +38,17 @@ echo ' ** setup wezterm'
 rm -f ~/.wezterm.lua
 ln -s "$(realpath wezterm/wezterm.lua)" ~/.wezterm.lua
 
-echo ' ** setup zsh-fzf-history-search'
-rm -f ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-fzf-history-search
-ln -s "$(realpath zsh-fzf-history-search)" ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-fzf-history-search
+echo ' ** setup nushell'
+rm -f ~/.config/nushell/config.nu
+ln -s "$(realpath nushell/config.nu)" ~/.config/nushell/config.nu
+rm -f ~/.config/nushell/env.nu
+ln -s "$(realpath nushell/env.nu)" ~/.config/nushell/env.nu
+rm -f ~/.config/nushell/dragon-light.nu
+ln -s "$(realpath nushell/dragon-light.nu)" ~/.config/nushell/dragon-light.nu
 
-#echo ' ** setup warpd'
-#rm -f ~/.config/warpd/config
-#ln -s "$(realpath warpd/config)" ~/.config/warpd/config
+echo ' ** setup starship'
+rm -f ~/.config/starship.toml
+ln -s "$(realpath starship/starship.toml)" ~/.config/starship.toml
 
 echo '* finished setup of dotfiles'
 
