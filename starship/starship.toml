@@ -1,6 +1,6 @@
 format = """
 $username \
-$directory\
+$directory \
 $git_branch\
 $git_status\
 $fill\
@@ -21,7 +21,7 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-format = ' [$symbol$branch](bold fg:#825c45)'
+format = '[$symbol$branch](bold fg:#825c45)'
 
 [git_status]
 format = '|[$all_status$ahead_behind](bold fg:#c87b2e)'
