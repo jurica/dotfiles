@@ -83,6 +83,14 @@ return {
         mason_lspconfig.setup {
             ensure_installed = vim.tbl_keys(servers),
         }
+
+        require('lspconfig').nushell.setup({
+            cmd = { "nu", "--lsp" },
+            filetypes = { "nu" },
+            root_dir = require("lspconfig.util").find_git_ancestor,
+            single_file_support = true,
+        })
+
         mason_lspconfig.setup_handlers {
             function(server_name)
                 require('lspconfig')[server_name].setup {

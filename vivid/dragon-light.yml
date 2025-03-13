@@ -16,7 +16,7 @@ colors:   # Nord Alacritty theme mapping: https://github.com/nordtheme/alacritty
   nord4:  '1b1b1b'  # foreground
   nord5:  'e5e9f0'  # white
   nord6:  'eceff4'  # brightwhite
-  nord7:  '8fbcbb'  # brightcyan
+  nord7:  '7aa89f'  # brightcyan
   nord8:  '7fb4ca'  # cyan
   nord9:  '658594'  # blue
   nord10: '445f96'  # darkblue
@@ -24,9 +24,9 @@ colors:   # Nord Alacritty theme mapping: https://github.com/nordtheme/alacritty
   nord12: 'a06c4e'  # orange
   nord13: 'debe97'  # yellow
   nord14: '87a987'  # green
-  nord15: 'e6c2c7'  # magenta
+  nord15: 'e46876'  # magenta
 
-  dim-foreground: 'a5abb6'
+  dim-foreground: '303030'
 
 core:
   normal_text:
