@@ -15,7 +15,6 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
     config.font_size    = 10.5
 elseif wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
     config.font_size    = 12
-    config.default_prog = { 'nu' }
 end
 
 config.window_decorations     = 'RESIZE'

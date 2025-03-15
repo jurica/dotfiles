@@ -1,66 +1,53 @@
-# Retrieve the theme settings
 export def main [] {
     const color_palette = {
-        rosewater: "#d9a594"
-        flamingo: "#b23b34"
-        pink: "#dd7878"
-        mauve: "#938aa9"
-        red: "#b23b34"
-        maroon: "#825c45"
-        peach: "#e46876"
-        yellow: "#c87b2e"
-        green: "#87a987"
-        teal: "#445f96"
-        sky: "#9fb5c9"
-        sapphire: "#7fb4ca"
-        blue: "#658594"
-        lavender: "#938aa9"
+        lotusRed0: "#d7474b"
+        sumiInk6: "#b1b1d2"
+        dragonRed: "#b23b34"
+        dragonOrange1: "#825c45"
+        waveRed: "#e46876"
+        roninYellow: "#c87b2e"
+        dragonGreen0: "#87a987"
+        dragonTeal: "#445f96"
+        dragonBlue0: "#658594"
+        springViolet: "#938aa9"
         text: "#1b1b1b"
-        subtext1: "#303030"
-        subtext0: "#787878"
-        overlay2: "#7c7f93"
         overlay1: "#8c8fa1"
         overlay0: "#9ca0b0"
-        surface2: "#acb0be"
-        surface1: "#bcc0cc"
-        surface0: "#ccd0da"
-        crust: "#d4d4f0"
-        mantle: "#d5dcd2"
         base: "#e7e7e7"
     }
 
     return {
         separator: $color_palette.overlay0
         leading_trailing_space_bg: { attr: "n" }
-        header: { fg: $color_palette.blue attr: "b" }
-        empty: $color_palette.lavender
-        bool: $color_palette.lavender
-        int: $color_palette.peach
+        header: { fg: $color_palette.dragonBlue0 attr: "b" }
+        empty: $color_palette.springViolet
+        bool: $color_palette.springViolet
+        int: $color_palette.waveRed
         duration: $color_palette.text
         filesize: {|e|
             if $e < 1mb {
-                $color_palette.green
+                $color_palette.dragonGreen0
             } else if $e < 100mb {
-                $color_palette.yellow
+                $color_palette.roninYellow
             } else if $e < 500mb {
-                $color_palette.peach
+                $color_palette.waveRed
             } else if $e < 800mb {
-                $color_palette.maroon
+                $color_palette.dragonOrange1
             } else if $e > 800mb {
-                $color_palette.red
+                $color_palette.dragonRed
             }
         }
         date: {|| (date now) - $in |
             if $in < 1hr {
-                $color_palette.green
+                $color_palette.dragonGreen0
             } else if $in < 1day {
-                $color_palette.yellow
+                $color_palette.roninYellow
             } else if $in < 3day {
-                $color_palette.peach
+                $color_palette.waveRed
             } else if $in < 1wk {
-                $color_palette.maroon
+                $color_palette.dragonOrange1
             } else if $in > 1wk {
-                $color_palette.red
+                $color_palette.dragonRed
             }
         }
         range: $color_palette.text
@@ -69,49 +56,49 @@ export def main [] {
         nothing: $color_palette.text
         binary: $color_palette.text
         'cell-path': $color_palette.text
-        row_index: { fg: $color_palette.mauve attr: "b" }
+        row_index: { fg: $color_palette.sumiInk6 attr: "b" }
         record: $color_palette.text
         list: $color_palette.text
         block: $color_palette.text
         hints: $color_palette.overlay1
-        search_result: { fg: $color_palette.red bg: $color_palette.text }
+        search_result: { fg: $color_palette.dragonRed bg: $color_palette.text }
 
-        shape_and: { fg: $color_palette.pink attr: "b" }
-        shape_binary: { fg: $color_palette.pink attr: "b" }
-        shape_block: { fg: $color_palette.blue attr: "b" }
-        shape_bool: $color_palette.teal
-        shape_custom: $color_palette.green
-        shape_datetime: { fg: $color_palette.teal attr: "b" }
-        shape_directory: $color_palette.teal
-        shape_external: $color_palette.teal
-        shape_externalarg: { fg: $color_palette.green attr: "b" }
-        shape_filepath: $color_palette.teal
-        shape_flag: { fg: $color_palette.blue attr: "b" }
-        shape_float: { fg: $color_palette.pink attr: "b" }
-        shape_garbage: { fg: $color_palette.text bg: $color_palette.red attr: "b" }
-        shape_globpattern: { fg: $color_palette.teal attr: "b" }
-        shape_int: { fg: $color_palette.pink attr: "b" }
-        shape_internalcall: { fg: $color_palette.teal attr: "b" }
-        shape_list: { fg: $color_palette.teal attr: "b" }
-        shape_literal: $color_palette.blue
-        shape_match_pattern: $color_palette.green
+        shape_and: { fg: $color_palette.lotusRed0 attr: "b" }
+        shape_binary: { fg: $color_palette.lotusRed0 attr: "b" }
+        shape_block: { fg: $color_palette.dragonBlue0 attr: "b" }
+        shape_bool: $color_palette.dragonTeal
+        shape_custom: $color_palette.dragonGreen0
+        shape_datetime: { fg: $color_palette.dragonTeal attr: "b" }
+        shape_directory: $color_palette.dragonTeal
+        shape_external: $color_palette.dragonTeal
+        shape_externalarg: { fg: $color_palette.dragonGreen0 attr: "b" }
+        shape_filepath: $color_palette.dragonTeal
+        shape_flag: { fg: $color_palette.dragonBlue0 attr: "b" }
+        shape_float: { fg: $color_palette.lotusRed0 attr: "b" }
+        shape_garbage: { fg: $color_palette.text bg: $color_palette.dragonRed attr: "b" }
+        shape_globpattern: { fg: $color_palette.dragonTeal attr: "b" }
+        shape_int: { fg: $color_palette.lotusRed0 attr: "b" }
+        shape_internalcall: { fg: $color_palette.dragonTeal attr: "b" }
+        shape_list: { fg: $color_palette.dragonTeal attr: "b" }
+        shape_literal: $color_palette.dragonBlue0
+        shape_match_pattern: $color_palette.dragonGreen0
         shape_matching_brackets: { attr: "u" }
-        shape_nothing: $color_palette.teal
-        shape_operator: $color_palette.peach
-        shape_or: { fg: $color_palette.pink attr: "b" }
-        shape_pipe: { fg: $color_palette.pink attr: "b" }
-        shape_range: { fg: $color_palette.peach attr: "b" }
-        shape_record: { fg: $color_palette.teal attr: "b" }
-        shape_redirection: { fg: $color_palette.pink attr: "b" }
-        shape_signature: { fg: $color_palette.green attr: "b" }
-        shape_string: $color_palette.green
-        shape_string_interpolation: { fg: $color_palette.teal attr: "b" }
-        shape_table: { fg: $color_palette.blue attr: "b" }
-        shape_variable: $color_palette.pink
+        shape_nothing: $color_palette.dragonTeal
+        shape_operator: $color_palette.waveRed
+        shape_or: { fg: $color_palette.lotusRed0 attr: "b" }
+        shape_pipe: { fg: $color_palette.lotusRed0 attr: "b" }
+        shape_range: { fg: $color_palette.waveRed attr: "b" }
+        shape_record: { fg: $color_palette.dragonTeal attr: "b" }
+        shape_redirection: { fg: $color_palette.lotusRed0 attr: "b" }
+        shape_signature: { fg: $color_palette.dragonGreen0 attr: "b" }
+        shape_string: $color_palette.dragonGreen0
+        shape_string_interpolation: { fg: $color_palette.dragonTeal attr: "b" }
+        shape_table: { fg: $color_palette.dragonBlue0 attr: "b" }
+        shape_variable: $color_palette.lotusRed0
 
         background: $color_palette.base
         foreground: $color_palette.text
-        cursor: $color_palette.blue
+        cursor: $color_palette.dragonBlue0
     }
 }
 
