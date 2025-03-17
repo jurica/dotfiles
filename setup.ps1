@@ -4,8 +4,9 @@ New-Item -ItemType Junction -Path C:\Users\jurica.bacurin\AppData\Local -Name 'n
 
 New-Item -ItemType SymbolicLink -Path C:\Users\jurica.bacurin\ -Name .wezterm.lua -Value D:\Dev\dotfiles\wezterm\wezterm.lua
 
-New-Item -ItemType SymbolicLink -Path C:\Users\juric\AppData\Roaming\nushell\ -Name config.nu -Value C:\Users\juric\Dev\dotfiles\nushell\config.nu
-New-Item -ItemType SymbolicLink -Path C:\Users\juric\AppData\Roaming\nushell\ -Name env.nu -Value C:\Users\juric\Dev\dotfiles\nushell\env.nu
-New-Item -ItemType Junction -Path C:\Users\juric\AppData\Roaming\nushell\ -Name 'custom-completions' -Target C:\Users\juric\Dev\dotfiles\nu_scripts\custom-completions\
+New-Item -ItemType SymbolicLink -Path C:\Users\jurica.bacurin\AppData\Roaming\nushell\ -Name config.nu -Value D:\Dev\dotfiles\nushell\config.nu
+New-Item -ItemType SymbolicLink -Path C:\Users\jurica.bacurin\AppData\Roaming\nushell\ -Name env.nu -Value D:\Dev\dotfiles\nushell\env.nu
+New-Item -ItemType SymbolicLink -Path C:\Users\jurica.bacurin\AppData\Roaming\nushell\ -Name dragon-light.nu -Value D:\Dev\dotfiles\nushell\dragon-light.nu
+New-Item -ItemType Junction -Path C:\Users\jurica.bacurin\AppData\Roaming\nushell\ -Name 'custom-completions' -Target D:\Dev\dotfiles\nu_scripts\custom-completions\
 
-New-Item -ItemType SymbolicLink -Path C:\Users\juric\.config\ -Name starship.toml -Value C:\Users\juric\Dev\dotfiles\starship\starship.toml
+New-Item -ItemType SymbolicLink -Path C:\Users\jurica.bacurin\.config\ -Name starship.toml -Value D:\Dev\dotfiles\starship\starship.toml
