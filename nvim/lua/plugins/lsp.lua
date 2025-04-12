@@ -35,7 +35,7 @@ return {
                 end
             end
             if is_clangd() then
-                local sw = require('lspconfig.server_configurations.clangd').commands.ClangdSwitchSourceHeader[1]
+                local sw = require('lspconfig.configs.clangd').commands.ClangdSwitchSourceHeader[1]
                 nmap('<F4>', sw, 'F4 - switch source/header')
             end
             nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
