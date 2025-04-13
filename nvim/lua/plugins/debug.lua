@@ -10,13 +10,18 @@ return {
         local dap = require 'dap'
         local dapui = require 'dapui'
 
+        local codelldb = function ()
+            return vim.fn.exepath('codelldb')
+        end
         dap.adapters.lldb = {
             name = 'lldb',
             type = 'server',
             port = "${port}",
             executable = {
                 -- command = vim.fn.exepath('codelldb'),
-                command = '/Users/jurica.bacurin/.local/share/nvim/mason/bin/codelldb',
+                -- command = '/Users/jurica.bacurin/.local/share/nvim/mason/bin/codelldb',
+                -- command = '/home/jb/.local/share/nvim/mason/bin/codelldb',
+                command = 'codelldb',
                 args = { "--port", "${port}" },
             },
         }
@@ -34,12 +39,12 @@ return {
                 initCommands = function()
                     local commands = {}
                     table.insert(commands, "breakpoint name configure --disable cpp_exception")
-                    local py   = vim.fn.expand("~/lldb-qt-formatters/QtFormatters.py")
-                    local lldb = vim.fn.expand("~/lldb-qt-formatters/QtFormatters.lldb")
-                    if vim.fn.filereadable(py) then
-                        table.insert(commands, "command script import " .. py)
-                        table.insert(commands, "command source " .. lldb)
-                    end
+                    -- local py   = vim.fn.expand("~/lldb-qt-formatters/QtFormatters.py")
+                    -- local lldb = vim.fn.expand("~/lldb-qt-formatters/QtFormatters.lldb")
+                    -- if vim.fn.filereadable(py) then
+                    --     table.insert(commands, "command script import " .. py)
+                    --     table.insert(commands, "command source " .. lldb)
+                    -- end
                     return commands
                 end
             },
