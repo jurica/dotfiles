@@ -28,7 +28,7 @@ return {
                     vim.keymap.set('n', keys, func, { buffer = event.buf, desc = desc })
                 end
                 local is_clangd = function()
-                    for _, client in pairs(vim.lsp.get_active_clients { bufnr = event.buf }) do
+                    for _, client in pairs(vim.lsp.get_clients { bufnr = event.buf }) do
                         if client.name == "clangd" then
                             return true
                         end
@@ -65,7 +65,6 @@ return {
         local servers = {
             clangd = {
             },
-            rust_analyzer = {},
             lua_ls = {
                 Lua = {
                     workspace = { checkThirdParty = false },
@@ -86,12 +85,12 @@ return {
             ensure_installed = vim.tbl_keys(servers),
         }
 
-        require('lspconfig').nushell.setup({
-            cmd = { "nu", "--lsp" },
-            filetypes = { "nu" },
-            root_dir = require("lspconfig.util").find_git_ancestor,
-            single_file_support = true,
-        })
+        -- require('lspconfig').nushell.setup({
+        --     cmd = { "nu", "--lsp" },
+        --     filetypes = { "nu" },
+        --     root_dir = require("lspconfig.util").find_git_ancestor,
+        --     single_file_support = true,
+        -- })
 
     --     local lspconfig = require 'lspconfig'
     --     local configs = require 'lspconfig.configs'

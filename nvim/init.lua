@@ -20,6 +20,7 @@ require('lazy').setup({
 
 vim.cmd.colorscheme 'dragon'
 
+vim.o.cmdheight = 0
 vim.o.breakindent = true
 vim.o.clipboard = 'unnamedplus'
 vim.o.completeopt = 'menuone,noselect'
