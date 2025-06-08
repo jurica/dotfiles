@@ -8,5 +8,5 @@ hash = "5fd7aa0bf4e7d9753ad8a4660a6eb94f"
 
 [[flavor.deps]]
 use = "jurica/dragon"
-rev = "420648c"
+rev = "d97de22"
 hash = "ecdbf495b32a9be6f5655c9bb5633535"
