@@ -35,8 +35,8 @@ rm -f ~/.config/delta/themes.gitconfig
 ln -s "$(realpath delta/themes.gitconfig)" ~/.config/delta/themes.gitconfig
 
 echo ' ** setup wezterm'
-rm -f ~/.wezterm.lua
-ln -s "$(realpath wezterm/wezterm.lua)" ~/.wezterm.lua
+rm -f ~/.config/wezterm
+ln -s "$(realpath wezterm)" ~/.config/wezterm
 
 echo ' ** setup nushell'
 rm -f ~/.config/nushell/config.nu
@@ -51,6 +51,29 @@ ln -s "$(realpath nu_scripts/custom-completions)" ~/.config/nushell/custom-compl
 echo ' ** setup starship'
 rm -f ~/.config/starship.toml
 ln -s "$(realpath starship/starship.toml)" ~/.config/starship.toml
+
+echo ' ** setup fuzzel'
+rm -f ~/.config/fuzzel
+ln -s "$(realpath fuzzel)" ~/.config/fuzzel
+
+echo ' ** setup sway'
+rm -f ~/.config/sway
+ln -s "$(realpath sway)" ~/.config/sway
+
+echo ' ** setup waybar'
+rm -f ~/.config/waybar
+ln -s "$(realpath waybar)" ~/.config/waybar
+
+echo ' ** setup wl-kbptr'
+rm -f ~/.config/wl-kbptr
+ln -s "$(realpath wl-kbptr)" ~/.config/wl-kbptr
+
+echo ' ** setup yazi'
+rm -f ~/.config/yazi/package.toml
+rm -f ~/.config/yazi/theme.toml
+ln -s "$(realpath package.toml)" ~/.config/yazi/package.toml
+ln -s "$(realpath theme.toml)" ~/.config/yazi/theme.toml
+ya pkg upgrade
 
 echo '* finished setup of dotfiles'
 

@@ -6,74 +6,26 @@ if wezterm.config_builder then
     config = wezterm.config_builder()
 end
 
-config.color_scheme = 'dragon-light'
-config.font         = wezterm.font('RobotoMono Nerd Font')
+config.font         = wezterm.font_with_fallback{'RobotoMono Nerd Font', 'Symbols Nerd Font Mono'}
 config.font_size    = 14
 
+config.window_decorations     = 'RESIZE'
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
     config.default_prog = { 'nu.exe' }
     config.font_size    = 10.5
 elseif wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
     config.font_size    = 12
+    config.window_decorations     = 'NONE'
 end
 
-config.window_decorations     = 'RESIZE'
 config.use_fancy_tab_bar      = false
 config.enable_tab_bar         = true
 
-local themes                  = {}
-
-local nord                    = {}
-nord['foreground']            = "#d8dee9"
-nord['background']            = "#2e3440"
-nord['cursor_bg']             = "#eceff4"
-nord['cursor_border']         = "#eceff4"
-nord['cursor_fg']             = "#282828"
-nord['selection_bg']          = "#eceff4"
-nord['selection_fg']          = "#4c566a"
-nord['ansi']                  = { "#3b4252", "#bf616a", "#a3be8c", "#ebcb8b", "#81a1c1", "#b48ead", "#88c0d0", "#e5e9f0" }
-nord['brights']               = { "#4c566a", "#bf616a", "#a3be8c", "#ebcb8b", "#81a1c1", "#b48ead", "#8fbcbb", "#eceff4" }
-nord['tab_bar_bg']            = '#2E3440'
-nord['active_tab_bg']         = '#81A1C1'
-nord['active_tab_fg']         = '#2E3440'
-nord['tab_bg']                = '#3B4252'
-nord['tab_fg']                = '#D8DEE9'
-themes['nord']                = nord
-
-local nord_light              = {}
-nord_light['foreground']      = "#414858"
-nord_light['background']      = "#e5e9f0"
-nord_light['cursor_bg']       = "#88c0d0"
-nord_light['cursor_border']   = "#88c0d0"
-nord_light['cursor_fg']       = "#3b4252"
-nord_light['selection_bg']    = "#d8dee9"
-nord_light['selection_fg']    = "#4c556a"
-nord_light['ansi']            = { "#3b4252", "#bf616a", "#a3be8c", "#c87b2e", "#81a1c1", "#b48ead", "#88c0d0", "#a0a0a0" }
-nord_light['brights']         = { "#4c566a", "#bf616a", "#a3be8c", "#c87b2e", "#81a1c1", "#b48ead", "#8fbcbb", "#a0a0a0" }
-nord_light['tab_bar_bg']      = '#ECEFF4'
-nord_light['active_tab_bg']   = '#81A1C1'
-nord_light['active_tab_fg']   = '#ECEFF4'
-nord_light['tab_bg']          = '#E5E9F0'
-nord_light['tab_fg']          = '#434C5E'
-themes['nord-light']          = nord_light
-
-local dragon_light            = {}
-dragon_light['foreground']    = "#1b1b1b"
-dragon_light['background']    = "#E7E7E7"
-dragon_light['cursor_bg']     = "#787878"
-dragon_light['cursor_border'] = "#c8c8c8"
-dragon_light['cursor_fg']     = "#eeeeee"
-dragon_light['selection_bg']  = "#d8d8d8"
-dragon_light['selection_fg']  = "#a0a0a0"
-dragon_light['ansi']          = { "#1b1b1b", "#b73242", "#6a824f", "#a0713c", "#9fb5c9", "#b1b1d2", "#7aa89f", "#a0a0a0" }
-dragon_light['brights']       = { "#1b1b1b", "#b73242", "#6a824f", "#a0713c", "#9fb5c9", "#b1b1d2", "#7aa89f", "#a0a0a0" }
-dragon_light['tab_bar_bg']    = '#E7E7E7'
-dragon_light['active_tab_bg'] = '#f6f6f6'
-dragon_light['active_tab_fg'] = '#1b1b1b'
-dragon_light['tab_bg']        = '#EEEEEE'
-dragon_light['tab_fg']        = '#A2A2A2'
-themes['dragon-light']        = dragon_light
-
+local themes = {}
+themes['nord'] = require("themes/nord")
+themes['nord-light'] = require("themes/nord-light")
+themes['dragon-light'] = require("themes/dragon-light")
+config.color_scheme = 'dragon-light'
 config.colors                 = {
     foreground = themes[config.color_scheme]['foreground'],
     background = themes[config.color_scheme]['background'],
