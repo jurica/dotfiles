@@ -5,7 +5,7 @@
     border-radius: 0;
 }
 
-#power-profiles-daemon, #pulseaudio, #tray {
+#power-profiles-daemon, #pulseaudio, #tray, #custom-notification {
     padding-right: 15px;
     padding-left: 15px;
     border-right: 1px solid #A2A2A2;

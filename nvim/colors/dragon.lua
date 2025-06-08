@@ -4,6 +4,7 @@
 -- Maintainer:   Bekaboo <kankefengjing@gmail.com>
 -- License:      GPL-3.0
 -- Last Updated: Thu 14 Dec 2023 11:44:22 PM CST
+-- Source:       https://github.com/Bekaboo/nvim
 
 -- Clear hlgroups and set colors_name {{{
 vim.cmd.hi('clear')

@@ -71,8 +71,8 @@ ln -s "$(realpath wl-kbptr)" ~/.config/wl-kbptr
 echo ' ** setup yazi'
 rm -f ~/.config/yazi/package.toml
 rm -f ~/.config/yazi/theme.toml
-ln -s "$(realpath package.toml)" ~/.config/yazi/package.toml
-ln -s "$(realpath theme.toml)" ~/.config/yazi/theme.toml
+ln -s "$(realpath yazi/package.toml)" ~/.config/yazi/package.toml
+ln -s "$(realpath yazi/theme.toml)" ~/.config/yazi/theme.toml
 ya pkg upgrade
 
 echo '* finished setup of dotfiles'
