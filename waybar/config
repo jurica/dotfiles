@@ -4,11 +4,10 @@
     "spacing": 0,
     "modules-left": [
         "sway/mode",
-        "sway/workspaces",
         "sway/scratchpad"
     ],
     "modules-center": [
-        "sway/window"
+        "sway/workspaces"
     ],
     "modules-right": [
         "power-profiles-daemon",
