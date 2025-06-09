@@ -7,6 +7,7 @@ client.unfocused         #d8d8d8 #d8d8d8 #787878 #303030
 client.urgent            #b73242 #b73242 #1b1b1b #303030
 
 focus_wrapping no
+focus_follows_mouse no
 title_align center
 bar swaybar_command waybar
 
@@ -132,3 +133,5 @@ bindsym $mod+r mode "resize"
 include /etc/sway/config.d/*
 
 
+    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
