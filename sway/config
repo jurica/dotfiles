@@ -30,8 +30,7 @@ input "type:keyboard" {
 }
 
 exec swaync
-exec swayidle idlehint 1
-exec_always swayidle -w before-sleep "swaylock -f -c "
+exec_always killall swayidle; swayidle -w before-sleep 'swaylock -f -c e7e7e7'
 exec blueman-applet
 exec /home/jb/Dev/BleCharge/build/Debug/BleCharge/appBleCharge
 
@@ -49,9 +48,8 @@ exec /home/jb/Dev/BleCharge/build/Debug/BleCharge/appBleCharge
 
     floating_modifier $mod normal
 
-
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-    bindsym $mod+Shift+s exec swaynag -t warning -m 'You pressed the suspend shortcut. Do you really want to suspend the machine?' -B 'Yes, suspend' 'swaymsg exit'
+    bindsym $mod+Shift+s exec swaynag -t warning -m 'You pressed the suspend shortcut. Do you really want to suspend the machine?' -Z 'Yes, suspend' 'systemctl suspend'
     bindsym $mod+F12 exec grim -g "$(slurp -o -r -c '#ff0000ff')" -t ppm - | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png
 
     bindsym $mod+$left focus left
