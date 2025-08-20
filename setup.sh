@@ -6,45 +6,19 @@ echo ' ** fetch git submodules'
 git submodule init
 git submodule update
 
-echo ' ** setup zsh'
-rm -f ~/.zshrc
-ln -s "$(realpath zshrc-mbp)" ~/.zshrc
-rm -f ~/.oh-my-zsh/themes/nord.zsh-theme
-ln -s "$(realpath omzsh-theme-nord-extended/nord.zsh-theme)" ~/.oh-my-zsh/themes/
-
-echo ' ** setup direnv'
-mkdir -p ~/.config/direnv
-rm -f ~/.config/direnv/direnv.toml
-ln -s "$(realpath direnv/direnv.toml)" ~/.config/direnv/
-
-echo ' ** setup zellij config'
-mkdir -p ~/.config/zellij
-rm -f ~/.config/zellij/config.kdl
-ln -s "$(realpath zellij/config.kdl)" ~/.config/zellij/config.kdl
-
-echo ' ** setup alacritty config'
-mkdir -p ~/.config/alacritty
-rm -f ~/.config/alacritty/alacritty.yml
-rm -f ~/.config/alacritty/themes
-ln -s "$(realpath alacritty/alacritty.yml)" ~/.config/alacritty/alacritty.yml
-ln -s "$(realpath alacritty-theme/themes)" ~/.config/alacritty/themes
-
 echo ' ** setup nvim config'
 rm -f ~/.config/nvim
 ln -s "$(realpath nvim)" ~/.config/nvim
 
-echo ' ** setup scripts'
-mkdir -p ~/bin
-rm -f ~/bin/nvim_remote.sh
-ln -s "$(realpath bin/nvim_remote.sh)" ~/bin/nvim_remote.sh
-rm -f ~/bin/keymap.sh
-ln -s "$(realpath bin/keymap.sh)" ~/bin/keymap.sh
-rm -f ~/bin/switch_theme.sh
-ln -s "$(realpath bin/switch_theme.sh)" ~/bin/switch_theme.sh
-rm -f ~/bin/zt.sh
-ln -s "$(realpath bin/zt.sh)" ~/bin/zt.sh
-rm -f ~/bin/za.sh
-ln -s "$(realpath bin/za.sh)" ~/bin/za.sh
+echo ' ** setup nushell'
+rm -f ~/Library/Application\ Support/nushell/config.nu
+ln -s "$(realpath nushell/config.nu)" ~/Library/Application\ Support/nushell/config.nu
+rm -f ~/Library/Application\ Support/nushell/env.nu
+ln -s "$(realpath nushell/env_macos.nu)" ~/Library/Application\ Support/nushell/env.nu
+rm -f ~/Library/Application\ Support/nushell/dragon-light.nu
+ln -s "$(realpath nushell/dragon-light.nu)" ~/Library/Application\ Support/nushell/dragon-light.nu
+rm -f ~/Library/Application\ Support/nushell/custom-completions
+ln -s "$(realpath nu_scripts/custom-completions)" ~/Library/Application\ Support/nushell/custom-completions
 
 echo ' ** setup lazygit config'
 rm -f ~/Library/Application\ Support/lazygit/config.yml
@@ -56,12 +30,8 @@ rm -f ~/.config/delta/themes.gitconfig
 ln -s "$(realpath delta/themes.gitconfig)" ~/.config/delta/themes.gitconfig
 
 echo ' ** setup wezterm'
-rm -f ~/.wezterm.lua
-ln -s "$(realpath wezterm/wezterm.lua)" ~/.wezterm.lua
-
-echo ' ** setup warpd'
-rm -f ~/.config/warpd/config
-ln -s "$(realpath warpd/config)" ~/.config/warpd/config
+rm -f ~/.config/wezterm
+ln -s "$(realpath wezterm)" ~/.config/wezterm
 
 echo '* finished setup of dotfiles'
 

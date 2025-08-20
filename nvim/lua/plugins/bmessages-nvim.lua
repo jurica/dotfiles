@@ -1,7 +1,8 @@
 return {
-    "ariel-frischer/bmessages.nvim",
+    -- "ariel-frischer/bmessages.nvim",
+    "OliverChao/bmessages.nvim",
     event = "CmdlineEnter",
     opts = {
-        split_direction = "split"
+        split_type = "split",
     }
 }
