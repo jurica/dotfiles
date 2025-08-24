@@ -20,6 +20,7 @@ require('lazy').setup({
 
 vim.cmd.colorscheme 'dragon'
 
+vim.o.winborder = 'rounded'
 vim.o.cmdheight = 0
 vim.o.breakindent = true
 vim.o.clipboard = 'unnamedplus'

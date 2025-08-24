@@ -25,8 +25,8 @@ set $menu fuzzel
 output * bg /home/jb/Pictures/Wallpaper/caffeine.png fill
 
 input "type:keyboard" {
-    xkb_layout us
-    xkb_variant mac
+    xkb_layout eu
+#    xkb_variant mac
 }
 
 exec swaync

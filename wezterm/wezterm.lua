@@ -14,8 +14,8 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
     config.default_prog = { 'nu.exe' }
     config.font_size    = 10.5
 elseif wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
-    config.font_size    = 12
-    config.window_decorations     = 'NONE'
+    config.font_size    = 11.5
+    -- config.window_decorations     = 'NONE'
 end
 
 config.use_fancy_tab_bar      = false
