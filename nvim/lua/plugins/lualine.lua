@@ -1,7 +1,15 @@
+local function format_mode(str)
+    local recording_register = vim.fn.reg_recording()
+    if recording_register == "" then
+        return str
+    else
+        return str .. "(recording @" .. recording_register .. ")"
+    end
+end
+
 return {
     'nvim-lualine/lualine.nvim',
     config = function()
-        local gitblame = require('gitblame')
         require('lualine').setup({
             options = {
                 icons_enabled = true,
@@ -16,20 +24,20 @@ return {
                 },
             },
             winbar = {
-                lualine_a = { 'mode' },
-                lualine_b = { 'diagnostics' },
+                lualine_a = { { 'mode', fmt = format_mode } },
+                lualine_b = { 'branch', { 'diff', colored = false } },
                 lualine_c = { { 'filename', path = 1 } },
+                -- lualine_x = { 'encoding', 'fileformat', 'filetype' },
                 lualine_y = { 'progress' },
                 lualine_z = { 'location' }
             },
             sections = {
-                lualine_b = {
-                    { 'branch' },
-                    { 'diff' },
-                },
-                lualine_c = {
-                    { gitblame.get_current_blame_text, cond = gitblame.is_blame_text_available }
-                },
+                lualine_a = { { 'mode', fmt = format_mode } },
+                lualine_b = { 'branch', { 'diff', colored = false } },
+                lualine_c = { { 'diagnostics', always_visible = true } },
+                lualine_x = { 'encoding', 'fileformat', 'filetype' },
+                lualine_y = { 'progress' },
+                lualine_z = { 'location' }
             },
             inactive_winbar = {
                 lualine_b = { { 'filename', path = 1 } },
@@ -41,16 +49,4 @@ return {
             },
         })
     end,
-    dependencies = {
-        {
-            "f-person/git-blame.nvim",
-            config = function()
-                vim.g.gitblame_date_format = '%d.%m.%y %H:%M'
-                vim.g.gitblame_message_template = '<author>  <date>  <summary>'
-                vim.g.gitblame_message_when_not_committed = 'Not Committed Yet'
-                vim.g.gitblame_display_virtual_text = 0
-                vim.g.gitblame_ignored_filetypes = { 'log', 'dump' }
-            end,
-        },
-    },
 }

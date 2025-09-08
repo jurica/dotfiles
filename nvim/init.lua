@@ -84,7 +84,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     pattern = '*',
 })
 
-pcall(function ()
-  vim.fn.serverstart('/tmp/nvim.pipe')
-end)
-
