@@ -3,8 +3,9 @@ $env.config.show_banner = false
 $env.EDITOR = "nvim"
 $env.config.buffer_editor = "nvim"
 $env.config.edit_mode = "vi"
-
-# TODO source *_OS.nu here instead of creating different symlinks during setup
+$env.DIRENV_CONFIG = "$env.LOCALAPPDATA\\direnv"
+$env.XDG_CACHE_HOME = "$env.LOCALAPPDATA\\cache"
+$env.XDG_DATA_HOME = "$env.LOCALAPPDATA\\data"
 
 $env.config = {
   hooks: { 
