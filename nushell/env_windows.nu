@@ -3,9 +3,9 @@ $env.config.show_banner = false
 $env.EDITOR = "nvim"
 $env.config.buffer_editor = "nvim"
 $env.config.edit_mode = "vi"
-$env.DIRENV_CONFIG = "$env.LOCALAPPDATA\\direnv"
-$env.XDG_CACHE_HOME = "$env.LOCALAPPDATA\\cache"
-$env.XDG_DATA_HOME = "$env.LOCALAPPDATA\\data"
+$env.DIRENV_CONFIG = $"($env.LOCALAPPDATA)\\direnv"
+$env.XDG_CACHE_HOME = $"($env.LOCALAPPDATA)\\cache"
+$env.XDG_DATA_HOME = $"($env.LOCALAPPDATA)"
 
 $env.config = {
   hooks: { 
