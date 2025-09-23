@@ -24,12 +24,12 @@ return {
                 },
             },
             winbar = {
-                lualine_a = { { 'mode', fmt = format_mode } },
-                lualine_b = { 'branch', { 'diff', colored = false } },
+                -- lualine_a = { { 'mode', fmt = format_mode } },
+                -- lualine_b = { 'branch', { 'diff', colored = false } },
                 lualine_c = { { 'filename', path = 1 } },
                 -- lualine_x = { 'encoding', 'fileformat', 'filetype' },
-                lualine_y = { 'progress' },
-                lualine_z = { 'location' }
+                -- lualine_y = { 'progress' },
+                -- lualine_z = { 'location' }
             },
             sections = {
                 lualine_a = { { 'mode', fmt = format_mode } },
