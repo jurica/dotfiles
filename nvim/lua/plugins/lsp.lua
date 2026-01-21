@@ -45,7 +45,10 @@ return {
                 nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
                 nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
                 nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
-                nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+                local openLspSymbols = function()
+                    require('telescope.builtin').lsp_document_symbols { symbol_width = 80 }
+                end
+                nmap('<leader>ds', openLspSymbols, '[D]ocument [S]ymbols')
                 nmap('<leader>Ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
                 nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
                 nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
@@ -92,20 +95,20 @@ return {
         --     single_file_support = true,
         -- })
 
-    --     local lspconfig = require 'lspconfig'
-    --     local configs = require 'lspconfig.configs'
-    --     if not configs.qml6_lsp then
-    --       configs.qml6_lsp = {
-    --         default_config = {
-    --           cmd = {'/home/jb/Qt/6.7.0/gcc_64/bin/qmlls'},
-    --           filetypes = {'qml'},
-    --           root_dir = function(fname)
-    --             return lspconfig.util.find_git_ancestor(fname)
-    --           end,
-    --           settings = {},
-    --         },
-    --       }
-    --     end
-    --     lspconfig.qml6_lsp.setup{}
+        --     local lspconfig = require 'lspconfig'
+        --     local configs = require 'lspconfig.configs'
+        --     if not configs.qml6_lsp then
+        --       configs.qml6_lsp = {
+        --         default_config = {
+        --           cmd = {'/home/jb/Qt/6.7.0/gcc_64/bin/qmlls'},
+        --           filetypes = {'qml'},
+        --           root_dir = function(fname)
+        --             return lspconfig.util.find_git_ancestor(fname)
+        --           end,
+        --           settings = {},
+        --         },
+        --       }
+        --     end
+        --     lspconfig.qml6_lsp.setup{}
     end
 }

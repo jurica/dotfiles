@@ -16,6 +16,8 @@ return {
 
             pcall(require('telescope').load_extension, 'fzf')
 
+            vim.keymap.set('n', '<leader>tr',
+                require('telescope.builtin').resume, { desc = '[t]elescope [r]esume' })
             vim.keymap.set('n', '<leader>?',
                 require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
             vim.keymap.set('n', '<leader><space>',
@@ -47,6 +49,9 @@ return {
                             },
                         },
                     },
+                    find_files = {
+                        no_ignore = true
+                    }
                 },
                 defaults = {
                     sorting_strategy = "ascending",
@@ -65,6 +70,16 @@ return {
                             preview_width = 0.6
                         },
                     },
+                    vimgrep_arguments = {
+                        "rg",
+                        "--color=never",
+                        "--no-heading",
+                        "--with-filename",
+                        "--line-number",
+                        "--column",
+                        "--smart-case",
+                        "--no-ignore"
+                    }
                 },
             }
         end

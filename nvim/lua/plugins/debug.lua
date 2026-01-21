@@ -84,11 +84,11 @@ return {
             function() require('dap.ext.vscode').load_launchjs(vim.fn.getcwd() .. '/.vscode/launch.json',
                     { lldb = { 'cpp', } }) end, { nargs = 0 })
 
-        dap.adapters.python = {
-            type = 'executable',
-            command = '/Users/jurica.bacurin/.local/share/nvim/mason/packages/debugpy/venv/bin/python',
-            args = { '-m', 'debugpy.adapter' },
-        }
+        -- dap.adapters.python = {
+        --     type = 'executable',
+        --     command = '/Users/jurica.bacurin/.local/share/nvim/mason/packages/debugpy/venv/bin/python',
+        --     args = { '-m', 'debugpy.adapter' },
+        -- }
 
         vim.fn.sign_define('DapStopped', { text = '󰏤', texthl = '', linehl = '', numhl = '' })
 
