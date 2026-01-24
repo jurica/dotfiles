@@ -111,3 +111,5 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
 alias cmake_configure_preset='cmake --preset=$(cmake --list-presets | tail -n +3 | fzf | cut -d '\''"'\'' -f2)'
 alias cmake_build_preset='cmake --build --preset=$(cmake --list-presets=build | tail -n +3 | fzf | cut -d '\''"'\'' -f2) $@'
 
+
+. "$HOME/.local/bin/env"

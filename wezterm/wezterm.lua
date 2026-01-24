@@ -6,16 +6,17 @@ if wezterm.config_builder then
     config = wezterm.config_builder()
 end
 
-config.font         = wezterm.font_with_fallback{'RobotoMono Nerd Font', 'Symbols Nerd Font Mono'}
+config.font         = wezterm.font_with_fallback{{ family = 'RobotoMono Nerd Font', weight = "Medium"}, 'Symbols Nerd Font Mono'}
 config.font_size    = 14
 
+config.front_end    = "WebGpu"
 config.window_decorations     = 'RESIZE'
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
     config.default_prog = { 'nu.exe' }
     config.font_size    = 10.5
 elseif wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
     config.font_size    = 11.5
-    -- config.window_decorations     = 'NONE'
+    config.window_decorations     = 'NONE'
 end
 
 config.use_fancy_tab_bar      = false
