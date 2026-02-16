@@ -8,6 +8,7 @@ end
 
 config.font         = wezterm.font_with_fallback{{ family = 'RobotoMono Nerd Font', weight = "Medium"}, 'Symbols Nerd Font Mono'}
 config.font_size    = 14
+config.warn_about_missing_glyphs = false
 
 config.front_end    = "WebGpu"
 config.window_decorations     = 'RESIZE'
@@ -22,42 +23,42 @@ end
 config.use_fancy_tab_bar      = false
 config.enable_tab_bar         = true
 
+local selected_theme = 'dragon-light'
 local themes = {}
 themes['nord'] = require("themes/nord")
 themes['nord-light'] = require("themes/nord-light")
 themes['dragon-light'] = require("themes/dragon-light")
-config.color_scheme = 'dragon-light'
 config.colors                 = {
-    foreground = themes[config.color_scheme]['foreground'],
-    background = themes[config.color_scheme]['background'],
-    cursor_fg = themes[config.color_scheme]['cursor_fg'],
-    cursor_bg = themes[config.color_scheme]['cursor_bg'],
-    selection_fg = themes[config.color_scheme]['selection_fg'],
-    selection_bg = themes[config.color_scheme]['selection_bg'],
-    ansi = themes[config.color_scheme]['ansi'],
-    brights = themes[config.color_scheme]['brights'],
+    foreground = themes[selected_theme]['foreground'],
+    background = themes[selected_theme]['background'],
+    cursor_fg = themes[selected_theme]['cursor_fg'],
+    cursor_bg = themes[selected_theme]['cursor_bg'],
+    selection_fg = themes[selected_theme]['selection_fg'],
+    selection_bg = themes[selected_theme]['selection_bg'],
+    ansi = themes[selected_theme]['ansi'],
+    brights = themes[selected_theme]['brights'],
     tab_bar = {
-        background = themes[config.color_scheme]['tab_bar_bg'],
+        background = themes[selected_theme]['tab_bar_bg'],
         active_tab = {
-            bg_color = themes[config.color_scheme]['active_tab_bg'],
-            fg_color = themes[config.color_scheme]['active_tab_fg'],
+            bg_color = themes[selected_theme]['active_tab_bg'],
+            fg_color = themes[selected_theme]['active_tab_fg'],
             intensity = 'Normal', -- Half, Normal, Bold
         },
         inactive_tab = {
-            bg_color = themes[config.color_scheme]['tab_bg'],
-            fg_color = themes[config.color_scheme]['tab_fg'],
+            bg_color = themes[selected_theme]['tab_bg'],
+            fg_color = themes[selected_theme]['tab_fg'],
         },
         inactive_tab_hover = {
-            bg_color = themes[config.color_scheme]['tab_bg'],
-            fg_color = themes[config.color_scheme]['tab_fg'],
+            bg_color = themes[selected_theme]['tab_bg'],
+            fg_color = themes[selected_theme]['tab_fg'],
         },
         new_tab = {
-            bg_color = themes[config.color_scheme]['tab_bg'],
-            fg_color = themes[config.color_scheme]['tab_fg'],
+            bg_color = themes[selected_theme]['tab_bg'],
+            fg_color = themes[selected_theme]['tab_fg'],
         },
         new_tab_hover = {
-            bg_color = themes[config.color_scheme]['tab_bg'],
-            fg_color = themes[config.color_scheme]['tab_fg'],
+            bg_color = themes[selected_theme]['tab_bg'],
+            fg_color = themes[selected_theme]['tab_fg'],
         },
     },
 }
@@ -162,8 +163,8 @@ wezterm.on('update-status', function(window, pane)
         fg = config.colors.background
         display_name = '  SEARCH  '
     else
-        bg = themes[config.color_scheme]['active_tab_bg']
-        fg = themes[config.color_scheme]['active_tab_fg']
+        bg = themes[selected_theme]['active_tab_bg']
+        fg = themes[selected_theme]['active_tab_fg']
         display_name = '  NORMAL  '
     end
     local mode = wezterm.format{
