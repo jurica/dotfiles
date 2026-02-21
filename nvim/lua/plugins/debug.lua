@@ -4,23 +4,29 @@ return {
         'rcarriga/nvim-dap-ui',
         'williamboman/mason.nvim',
         'leoluz/nvim-dap-go',
-        "nvim-neotest/nvim-nio",
+        'nvim-neotest/nvim-nio',
+        'Shatur/neovim-tasks',
     },
     config = function()
         local dap = require 'dap'
         local dapui = require 'dapui'
 
-        local codelldb = function ()
-            return vim.fn.exepath('codelldb')
+        local getTargetExe = function()
+            local ProjectConfig = require('tasks.project_config')
+            local projectConfig = ProjectConfig:new()
+            local cmake_utils = require('tasks.cmake_utils.cmake_utils')
+            local module_config = projectConfig.cmake
+            local build_dir = cmake_utils.getBuildDirFromConfig(module_config)
+            local target_path = cmake_utils.getExecutablePath(build_dir, module_config.target,
+                cmake_utils.getCurrentBuildType(module_config), cmake_utils.getReplyDir(build_dir))
+            return target_path.filename
         end
+
         dap.adapters.lldb = {
             name = 'lldb',
             type = 'server',
             port = "${port}",
             executable = {
-                -- command = vim.fn.exepath('codelldb'),
-                -- command = '/Users/jurica.bacurin/.local/share/nvim/mason/bin/codelldb',
-                -- command = '/home/jb/.local/share/nvim/mason/bin/codelldb',
                 command = 'codelldb',
                 args = { "--port", "${port}" },
             },
@@ -30,9 +36,7 @@ return {
                 name = 'Launch',
                 type = 'lldb',
                 request = 'launch',
-                program = function()
-                    return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-                end,
+                program = getTargetExe,
                 cwd = '${workspaceFolder}',
                 stopOnEntry = false,
                 args = {},
@@ -49,40 +53,6 @@ return {
                 end
             },
         }
-        vim.api.nvim_create_user_command('SetDebuggee',
-            function()
-                local dap = require 'dap'
-                dap.configurations.cpp[1].program = vim.fn.input('Path to debugee: ', vim.fn.getcwd() .. '/', 'file')
-            end,
-            { nargs = 0 }
-        )
-        vim.api.nvim_create_user_command('ResetDebuggee',
-            function()
-                local dap = require 'dap'
-                dap.configurations.cpp = {
-                    {
-                        name = 'Launch',
-                        type = 'lldb',
-                        request = 'launch',
-                        program = function()
-                            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-                        end,
-                        cwd = '${workspaceFolder}',
-                        stopOnEntry = false,
-                        args = {},
-                    },
-                }
-            end,
-            { nargs = 0 }
-        )
-        vim.api.nvim_create_user_command('ShowDebuggee', function()
-                vim.print("Current debuggee: ", dap.configurations.cpp[1].program)
-            end,
-            { nargs = 0 }
-        )
-        vim.api.nvim_create_user_command('DapLoadLldbForCpp',
-            function() require('dap.ext.vscode').load_launchjs(vim.fn.getcwd() .. '/.vscode/launch.json',
-                    { lldb = { 'cpp', } }) end, { nargs = 0 })
 
         -- dap.adapters.python = {
         --     type = 'executable',
@@ -95,9 +65,9 @@ return {
         require('dap-go').setup()
 
         vim.keymap.set('n', '<F5>', dap.continue)
-        vim.keymap.set('n', '<F1>', dap.step_into)
-        vim.keymap.set('n', '<F2>', dap.step_over)
-        vim.keymap.set('n', '<F3>', dap.step_out)
+        vim.keymap.set('n', '<F2>', dap.step_into)
+        vim.keymap.set('n', '<F3>', dap.step_over)
+        vim.keymap.set('n', '<F4>', dap.step_out)
         vim.keymap.set('n', '<leader>b', dap.toggle_breakpoint)
         vim.keymap.set('n', '<leader>B', function()
             dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
