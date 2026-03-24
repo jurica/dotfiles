@@ -29,6 +29,10 @@ mkdir -p ~/.config/delta
 rm -f ~/.config/delta/themes.gitconfig
 ln -s "$(realpath delta/themes.gitconfig)" ~/.config/delta/themes.gitconfig
 
+echo ' ** setup starship'
+rm -f ~/.config/starship.toml
+ln -s "$(realpath starship/starship.toml)" ~/.config/starship.toml
+
 echo ' ** setup wezterm'
 rm -f ~/.config/wezterm
 ln -s "$(realpath wezterm)" ~/.config/wezterm

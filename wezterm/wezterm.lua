@@ -7,7 +7,7 @@ if wezterm.config_builder then
 end
 
 config.font         = wezterm.font_with_fallback{{ family = 'RobotoMono Nerd Font', weight = "Medium"}, 'Symbols Nerd Font Mono'}
-config.font_size    = 14
+config.font_size    = 15
 config.warn_about_missing_glyphs = false
 
 config.front_end    = "WebGpu"

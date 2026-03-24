@@ -51,6 +51,7 @@ return {
                     "dapui_scopes", "dapui_console",
                     "dapui_stacks", "dap-repl"
                 },
+                globalstatus = true,
             },
             winbar = {
                 -- lualine_a = { { 'mode', fmt = format_mode } },
