@@ -3,14 +3,14 @@ vim.g.maplocalleader = ' '
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system {
-        'git',
-        'clone',
-        '--filter=blob:none',
-        'https://github.com/folke/lazy.nvim.git',
-        '--branch=stable', -- latest stable release
-        lazypath,
-    }
+  vim.fn.system {
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable', -- latest stable release
+    lazypath,
+  }
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -84,3 +84,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     pattern = '*',
 })
 
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { "*" },
+  callback = function()
+    local filetype = vim.bo.filetype
+    if filetype and filetype ~= "" then
+      pcall(vim.treesitter.start)
+    end
+  end,
+})
+
+-- require"vim._core.ui2".enable{}
