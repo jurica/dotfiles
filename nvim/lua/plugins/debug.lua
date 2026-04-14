@@ -11,6 +11,19 @@ return {
         local dap = require 'dap'
         local dapui = require 'dapui'
 
+        local breakpoints_setqflist = function ()
+            local breakpoints = require('dap.breakpoints')
+              local bps = {}
+              local breakpoints_by_buf = breakpoints.get()
+              for buf, buf_bps in pairs(breakpoints_by_buf) do
+                for _,v in ipairs(buf_bps) do
+                  table.insert(bps, {bufnr = buf, lnum = v.line, text = vim.api.nvim_buf_get_lines(buf, v.line-1, v.line, true)[1]})
+                end
+              end
+              vim.fn.setqflist(bps)
+              return vim.cmd.copen()
+        end
+
         local getTargetExe = function()
             local ProjectConfig = require('tasks.project_config')
             local projectConfig = ProjectConfig:new()
@@ -68,6 +81,7 @@ return {
         vim.keymap.set('n', '<F2>', dap.step_into)
         vim.keymap.set('n', '<F3>', dap.step_over)
         vim.keymap.set('n', '<F4>', dap.step_out)
+        vim.keymap.set('n', '<leader>bb', breakpoints_setqflist)
         vim.keymap.set('n', '<leader>b', dap.toggle_breakpoint)
         vim.keymap.set('n', '<leader>B', function()
             dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
