@@ -1,9 +1,10 @@
 os:
   editPreset: nvim
 git:
-  pagers:
+  diffRenderers:
     - colorArg: always
-      pager: delta --light --paging=never --line-numbers
+      command: delta --light --paging=never --line-numbers
     - colorArg: always
-      pager: delta --light --paging=never --line-numbers --side-by-side
+      command: delta --light --paging=never --line-numbers --side-by-side
     - colorArg: always
+      type: rawGit

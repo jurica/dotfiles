@@ -71,6 +71,7 @@ ln -s "$(realpath wl-kbptr)" ~/.config/wl-kbptr
 echo ' ** setup yazi'
 rm -f ~/.config/yazi/package.toml
 rm -f ~/.config/yazi/theme.toml
+mkdir -p ~/.config/yazi
 ln -s "$(realpath yazi/package.toml)" ~/.config/yazi/package.toml
 ln -s "$(realpath yazi/theme.toml)" ~/.config/yazi/theme.toml
 ya pkg upgrade
