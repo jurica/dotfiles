@@ -59,6 +59,11 @@ vim.keymap.set('n', '<M-.>', ":tabnext<CR>", { desc = 'Tab next' })
 vim.keymap.set('n', '<M-,>', ":tabprevious<CR>", { desc = 'Tab previous' })
 vim.keymap.set('n', '<M-C-,>', ":tabmove -1<CR>", { desc = 'Tab move left' })
 vim.keymap.set('n', '<M-C-.>', ":tabmove +1<CR>", { desc = 'Tab move right' })
+vim.keymap.set('n', '<Esc>', function ()
+  local mc_ns = vim.api.nvim_create_namespace('nvim.multicursor')
+  vim.api.nvim_buf_clear_namespace(0, mc_ns, 0, -1)
+  return '<Esc>'
+end, { expr = true, desc = 'Clear multicursors' })
 vim.keymap.set('v', '>', '>gv')
 vim.keymap.set('v', '<', '<gv')
 vim.cmd('set background=light')
@@ -93,5 +98,35 @@ vim.api.nvim_create_autocmd('FileType', {
     end
   end,
 })
+
+local function close_hidden_buffers()
+  -- 1. Track all buffers currently visible in any window across all tabs
+  local visible_bufs = {}
+  for _, tab in ipairs(vim.api.nvim_list_tabpages()) do
+    for _, win in ipairs(vim.api.nvim_tabpage_list_wins(tab)) do
+      visible_bufs[vim.api.nvim_win_get_buf(win)] = true
+    end
+  end
+
+  -- 2. Iterate through all buffers and delete the hidden, listed ones
+  local closed_count = 0
+  for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
+    -- Check if it's loaded, listed, and NOT currently visible
+    if vim.api.nvim_buf_is_loaded(bufnr)
+       and vim.bo[bufnr].buflisted
+       and not visible_bufs[bufnr] then
+
+      -- Force delete if modified, or safely delete if saved
+      -- Use 'force = true' if you want to wipe them regardless of changes
+      local success = pcall(vim.api.nvim_buf_delete, bufnr, { unload = false })
+      if success then
+        closed_count = closed_count + 1
+      end
+    end
+  end
+
+  print(string.format("Closed %d hidden buffer(s).", closed_count))
+end
+vim.api.nvim_create_user_command("CloseHiddenBuffers", close_hidden_buffers, {})
 
 -- require"vim._core.ui2".enable{}
