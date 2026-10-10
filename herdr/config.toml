@@ -1,0 +1,68 @@
+onboarding = false
+
+[theme]
+name = "terminal"
+auto_switch = false
+
+# dragon-light, ported from wezterm/themes/dragon-light.lua
+[theme.custom]
+accent = "#9fb5c9"
+panel_bg = "#E7E7E7"
+sidebar_bg = "#E7E7E7"
+active_row_bg = "#f6f6f6"
+selection_bg = "#d8d8d8"
+surface0 = "#EEEEEE"
+surface1 = "#f6f6f6"
+surface_dim = "#d8d8d8"
+overlay0 = "#a0a0a0"
+overlay1 = "#c8c8c8"
+text = "#1b1b1b"
+subtext0 = "#787878"
+mauve = "#b1b1d2"
+green = "#6a824f"
+yellow = "#a0713c"
+red = "#b73242"
+blue = "#9fb5c9"
+teal = "#7aa89f"
+peach = "#a0713c"
+
+[ui]
+status_indicators = "symbols"
+prompt_new_tab_name = true
+prompt_new_workspace_name = true
+# sidebar_collapsed_mode = "hidden"
+pane_gaps = false
+
+[ui.sound]
+enabled = false
+
+[ui.toast]
+delivery = "herdr"
+herdr.position = "bottom-right"
+clipboard.position = "bottom-right"
+
+[keys]
+settings = ""
+copy_mode = ["prefix+[", "prefix+f"]
+previous_tab = ["prefix+alt+,", "prefix+,"]
+next_tab = ["prefix+alt+.", "prefix+."]
+split_vertical = "prefix+v"
+split_horizontal = "prefix+s"
+navigate_workspace_up = ["g", "[", ","]
+navigate_workspace_down = ["b", "]", "."]
+navigate_pane_down = ["j", "up"]
+navigate_pane_up = ["k", "down"]
+focus_pane_left = ["prefix+h", "prefix+alt+h"]
+focus_pane_down = ["prefix+j", "prefix+alt+j"]
+focus_pane_up = ["prefix+k", "prefix+alt+k"]
+focus_pane_right = ["prefix+l", "prefix+alt+l"]
+resize_pane_left = "prefix+ctrl+h"
+resize_pane_down = "prefix+ctrl+j"
+resize_pane_up = "prefix+ctrl+k"
+resize_pane_right = "prefix+ctrl+l"
+clear_pane = "prefix+0"
+close_tab = ""
+close_pane = ""
+close_workspace = ""
+new_tab = "prefix+n"
+new_workspace = "prefix+shift+n"

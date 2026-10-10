@@ -1,0 +1,24 @@
+[font]
+size = 11.5
+
+[font.normal]
+family = "RobotoMono Nerd Font"
+
+[[keyboard.bindings]]
+chars = "\u001BF"
+key = "Right"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001BB"
+key = "Left"
+mods = "Alt"
+
+[general]
+import = ["/home/jb/.config/alacritty/themes/dragon_light.yaml"]
+
+[window]
+decorations = "none"
+option_as_alt = "OnlyLeft"
+
+[keyboard]

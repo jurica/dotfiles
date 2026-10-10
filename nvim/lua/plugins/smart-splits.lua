@@ -1,6 +1,6 @@
-
 return {
-  'mrjones2014/smart-splits.nvim',
+  'smart-splits-nvim/smart-splits.nvim',
+  -- version = '^2.0.0',
   config = function ()
     vim.keymap.set('n', '<M-h>', require('smart-splits').move_cursor_left, { desc = 'Move focus left'})
     vim.keymap.set('n', '<M-j>', require('smart-splits').move_cursor_down, { desc = 'Move focus down'})
