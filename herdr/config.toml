@@ -4,6 +4,9 @@ onboarding = false
 name = "terminal"
 auto_switch = false
 
+[terminal]
+default_shell = "nu"
+
 # dragon-light, ported from wezterm/themes/dragon-light.lua
 [theme.custom]
 accent = "#9fb5c9"

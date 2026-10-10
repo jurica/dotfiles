@@ -19,7 +19,10 @@ mods = "Alt"
 import = ["themes/dragon_light.toml"]
 
 [window]
-decorations = "none"
+#decorations = "none"
 option_as_alt = "OnlyLeft"
+
+[terminal]
+shell = "nu"
 
 [keyboard]

@@ -20,6 +20,16 @@ if (Test-Path "$HomeDir\.config\wezterm") {
 }
 New-Item -ItemType Junction -Path "$HomeDir\.config" -Name wezterm -Target "$DotfilesPath\wezterm\"
 
+if (Test-Path "$HomeDir\AppData\Roaming\alacritty") {
+    Remove-Item "$HomeDir\AppData\Roaming\alacritty" -Force -Recurse
+}
+New-Item -ItemType Junction -Path "$HomeDir\AppData\Roaming" -Name alacritty -Target "$DotfilesPath\alacritty\"
+
+if (Test-Path "$HomeDir\AppData\Roaming\herdr\config.toml") {
+    Remove-Item "$HomeDir\AppData\Roaming\herdr\config.toml" -Force -Recurse
+}
+New-Item -ItemType SymbolicLink -Path "$HomeDir\AppData\Roaming\herdr" -Name config.toml -Value "$DotfilesPath\herdr\config.toml"
+
 if (Test-Path "$HomeDir\AppData\Local\direnv\direnv.toml") {
     Remove-Item "$HomeDir\AppData\Local\direnv\direnv.toml" -Force -Recurse
 }
