@@ -3,6 +3,7 @@ size = 11.5
 
 [font.normal]
 family = "RobotoMono Nerd Font"
+# style = "Medium"
 
 [[keyboard.bindings]]
 chars = "\u001BF"
@@ -15,7 +16,7 @@ key = "Left"
 mods = "Alt"
 
 [general]
-import = ["/home/jb/.config/alacritty/themes/dragon_light.yaml"]
+import = ["themes/dragon_light.toml"]
 
 [window]
 decorations = "none"
