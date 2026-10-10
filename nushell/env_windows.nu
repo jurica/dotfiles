@@ -1,4 +1,5 @@
 $env.config.show_banner = false
+$env.config.shell_integration.osc133 = false
 
 $env.EDITOR = "nvim"
 $env.config.buffer_editor = "nvim"
