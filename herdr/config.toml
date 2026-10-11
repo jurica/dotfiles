@@ -45,6 +45,7 @@ herdr.position = "bottom-right"
 clipboard.position = "bottom-right"
 
 [keys]
+prefix = ["ctrl+b", "alt+p"]
 settings = ""
 copy_mode = ["prefix+[", "prefix+f"]
 previous_tab = ["prefix+alt+,", "prefix+,"]

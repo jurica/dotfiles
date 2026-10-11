@@ -37,6 +37,14 @@ echo ' ** setup wezterm'
 rm -f ~/.config/wezterm
 ln -s "$(realpath wezterm)" ~/.config/wezterm
 
+echo ' ** setup alacritty'
+rm -f ~/.config/alacritty
+ln -s "$(realpath alacritty)" ~/.config/alacritty
+
+echo ' ** setup starship'
+rm -f ~/.config/herdr/config.toml
+ln -s "$(realpath herdr/config.toml)" ~/.config/herdr/config.toml
+
 echo '* finished setup of dotfiles'
 
 cat << EOF
