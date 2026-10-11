@@ -3,6 +3,7 @@ $env.config.show_banner = false
 $env.EDITOR = "nvim"
 $env.config.buffer_editor = "nvim"
 $env.config.edit_mode = "vi"
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/home/jb/.local/bin')
 
 # TODO source *_OS.nu here instead of creating different symlinks during setup
 
