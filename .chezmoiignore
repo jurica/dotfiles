@@ -5,7 +5,6 @@ nvim/
 qmk/
 vivid/
 
-setup-arch.sh
 setup-ubuntu.sh
 setup.sh
 
