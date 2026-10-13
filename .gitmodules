@@ -1,6 +1,0 @@
-[submodule "delta"]
-	path = delta
-	url = https://github.com/dandavison/delta.git
-[submodule "nu_scripts"]
-	path = nu_scripts
-	url = https://github.com/nushell/nu_scripts.git

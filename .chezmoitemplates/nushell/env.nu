@@ -8,7 +8,7 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/jb/.local/bin')
 # TODO source *_OS.nu here instead of creating different symlinks during setup
 
 $env.config = {
-  hooks: { 
+  hooks: {
     env_change: {
       PWD: [{ ||
         if (which direnv | is-empty) {

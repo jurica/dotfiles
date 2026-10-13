@@ -1,0 +1,13 @@
+bin/
+kzones/
+nvim/
+qmk/
+vivid/
+
+{{ if ne .chezmoi.os "darwin" }}
+{{ end }}
+{{ if ne .chezmoi.os "linux" }}
+{{ end }}
+{{ if ne .chezmoi.os "windows" }}
+AppData/
+{{ end }}
