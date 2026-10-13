@@ -1,8 +1,15 @@
 bin/
+btt/
 kzones/
 nvim/
 qmk/
 vivid/
+
+Profile.ps1
+setup-arch.sh
+setup-ubuntu.sh
+setup.ps1
+setup.sh
 
 {{ if ne .chezmoi.os "darwin" }}
 {{ end }}
