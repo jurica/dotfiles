@@ -5,10 +5,8 @@ nvim/
 qmk/
 vivid/
 
-Profile.ps1
 setup-arch.sh
 setup-ubuntu.sh
-setup.ps1
 setup.sh
 
 {{ if ne .chezmoi.os "darwin" }}
@@ -17,4 +15,12 @@ setup.sh
 {{ end }}
 {{ if ne .chezmoi.os "windows" }}
 AppData/
+Documents/
+{{ end }}
+{{ if eq .chezmoi.os "windows" }}
+.config/alacritty/
+.config/herdr/
+.config/lazygit/
+.config/nushell/
+.config/nvim/
 {{ end }}
