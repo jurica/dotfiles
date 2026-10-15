@@ -5,9 +5,6 @@ nvim/
 qmk/
 vivid/
 
-setup-ubuntu.sh
-setup.sh
-
 {{ if ne .chezmoi.os "darwin" }}
 {{ end }}
 {{ if ne .chezmoi.os "linux" }}
