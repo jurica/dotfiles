@@ -1,0 +1,8 @@
+[user]
+	email = jurica@bacurin.de
+	name = Jurica Bacurin
+[core]
+    pager = delta
+[delta]
+    light = true
+
