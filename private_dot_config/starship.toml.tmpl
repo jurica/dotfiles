@@ -1,16 +1,15 @@
 format = """
-{{- if eq .chezmoi.hostname "SAB-C-000D0" "SAB-C-000CW" }}
-$env_var\
-{{- end }}
+$time\
+[│](fg:#a0a0a0)\
 $username\
 [@](bold fg:#373e50)\
 $hostname\
 [│](fg:#a0a0a0)\
 $directory\
-$git_branch\
-$git_status\
-$fill\
-$time \
+{{- if eq .chezmoi.hostname "SAB-C-000D0" "SAB-C-000CW" }}
+[│](fg:#a0a0a0)\
+$env_var\
+{{- end }}
 \n$character"""
 
 [fill]
