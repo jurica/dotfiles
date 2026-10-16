@@ -24,6 +24,9 @@ $env.Path = ($env.Path | append '/Users/baj1sab/Qt/Tools/Ninja')
 $env.Path = ($env.Path | append '/Users/baj1sab/.local/bin')
 
 $env.JAVA_HOME = "/Users/baj1sab/jdk-26.jdk/Contents/Home"
+{{ else if eq .chezmoi.hostname "SAB-C-000CW" }}
+$env.Path = ($env.Path | append $"($env.HOMEDRIVE)($env.HOMEPATH)\\.local\\bin")
+{{ else if eq .chezmoi.hostname "SAB-C-000D0" "SAB-C-000CW" }}
 def --env setProxy [] {
   $env.http_proxy = "http://proxyemea.keen.tech:8080"
   $env.https_proxy = "http://proxyemea.keen.tech:8080"

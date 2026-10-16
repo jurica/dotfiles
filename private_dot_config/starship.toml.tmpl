@@ -1,5 +1,5 @@
 format = """
-{{- if eq .chezmoi.hostname "SAB-C-000D0" }}
+{{- if eq .chezmoi.hostname "SAB-C-000D0" "SAB-C-000CW" }}
 $env_var\
 {{- end }}
 $username\
@@ -40,7 +40,7 @@ format = '[│](fg:#a0a0a0)[$all_status$ahead_behind](bold fg:#c87b2e)[\)](bold 
 disabled = false
 time_format = "%d.%m.%Y %R"
 format = '[$time](bold fg:#1b1b1b)'
-{{ if eq .chezmoi.hostname "SAB-C-000D0" }}
+{{ if eq .chezmoi.hostname "SAB-C-000D0" "SAB-C-000CW" }}
 [env_var.ROADIE]
 variable = 'ROADIE_PROMPT_ICON'
 format = '[$env_value](orange bold) '
