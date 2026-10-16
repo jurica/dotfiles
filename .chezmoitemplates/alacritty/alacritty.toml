@@ -1,0 +1,32 @@
+[font]
+{{- if eq .chezmoi.hostname "SAB-C-000D0" }}
+size = 15
+{{- else }}
+size = 11.5
+{{- end }}
+
+[font.normal]
+family = "RobotoMono Nerd Font"
+# style = "Medium"
+
+[[keyboard.bindings]]
+chars = "\u001BF"
+key = "Right"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001BB"
+key = "Left"
+mods = "Alt"
+
+[general]
+import = ["themes/dragon_light.toml"]
+
+[window]
+#decorations = "none"
+option_as_alt = "OnlyLeft"
+
+[terminal]
+shell = "nu"
+
+[keyboard]

@@ -1,0 +1,11 @@
+[nu_scripts]
+    type = "git-repo"
+    url = "https://github.com/nushell/nu_scripts"
+    refreshPeriod = "168h"
+{{- if eq .chezmoi.os "windows" }}
+    targetPath = "AppData/Roaming/nushell/nu_scripts"
+{{- else if eq .chezmoi.os "darwin" }}
+    targetPath = "Library/Application Support/nushell/nu_scripts"
+{{- else }}
+    targetPath = ".config/nushell/nu_scripts"
+{{- end }}
