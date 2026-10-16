@@ -6,9 +6,17 @@ qmk/
 vivid/
 
 {{ if ne .chezmoi.os "darwin" }}
+Library/
 {{ end }}
+{{ if eq .chezmoi.os "darwin" }}
+.config/lazygit/
+.config/nushell/
+{{ end }}
+
 {{ if ne .chezmoi.os "linux" }}
+.gitconfig
 {{ end }}
+
 {{ if ne .chezmoi.os "windows" }}
 AppData/
 Documents/
